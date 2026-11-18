@@ -1,5 +1,80 @@
 # Development route recovery
 
+## Restored Member 4 interfaces
+
+The team selected HistGradientBoosting. The default is the existing
+`hist_gradient_boosting_optimized` artifact in the API and UI. The main comparison
+is that classifier alone versus that same classifier plus HMM. No models or
+training scripts were changed. `/health` still discovers the five classifier
+families and two optimized variants for supporting experiments.
+
+The [selected-model report](../reports/SELECTED_HGB_HMM.md) documents the pooled
+Top-1 change, **81.92% to 79.49% (-2.43 percentage points)**, and continuity change,
+**85.25% to 98.27%**. The team choice is not presented as a new cross-validation
+finding. `/selected-model` exposes aggregate development measurements only when
+their SHA-256 matches the saved artifact. The UI shows this aggregate panel
+separately from optional current-trip evaluation, including the accuracy delta.
+
+Logistic Regression, Decision Tree and KNN are loaded from `../models/`.
+Random Forest and HistGradientBoosting baselines are loaded from
+`../outputs/models/`; optimized variants come from `../outputs/optimization/`.
+Run `git lfs pull` after cloning to obtain the actual large model files.
+The server reports an actionable error if a pointer was downloaded instead.
+Only one classifier is cached, to limit retained Random Forest memory.
+
+`classifier.py` validates saved feature names/order, binary class labels and
+scikit-learn version compatibility. It batches positive-class probabilities,
+clips them at 1e-12 and normalises each observation's candidate set before
+taking log emission scores. These are emission potentials, not calibrated GPS
+likelihoods. Model files are read-only and only server-configured paths may be
+loaded. When a model version differs, use the training-compatible environment;
+do not suppress persistence warnings.
+
+Set `PATHSNAP_MODEL_ARTIFACT` on the server to expose a trusted future artifact
+as `configured`, without editing the HMM. It must expose sklearn-style
+`predict_proba`, classes {0,1} and the exact shared ordered feature names.
+Unrecognised formats fail explicitly rather than silently falling back.
+
+Reference evaluation is optional (`evaluate: true`) and happens after prediction
+in `evaluation.py`. Labels, reference IDs and reference geometry are never
+returned. Top-1 includes all cleaned observations, including candidate misses.
+The response distinguishes candidate binary Macro F1 from within-trip road-arc
+Macro F1. Continuity counts speed-valid directed transitions among eligible
+adjacent observations, including unmatched/invalid eligible pairs as failures;
+timestamp and original-row gaps are excluded. Exact-trip match is also reported.
+The existing reference alignment is derived and may be ambiguous.
+
+```powershell
+python -m route_recovery.compare_routes student_test --model decision_tree --output reports/member4_classifier_hmm.json
+```
+
+To verify every available saved model through `/match`, optional evaluation and
+`/visualize`, without retraining:
+
+```powershell
+python -m route_recovery.verify_integration
+```
+
+Per-model reports and their combined summary are written to
+[`../reports/integrated_models/`](../reports/integrated_models/).
+These use the ten development student-test trips and derived reference labels;
+they are not a training cross-validation leaderboard or reserved evaluation.
+
+This command never trains or tunes a model and only accepts development partition
+names. It reports per-trip results, pooled all-observation Top-1, mean per-trip
+road-arc Macro F1, continuity and inference time. No HMM accuracy improvement is
+assumed. Model selection and tuning decisions remain with the team.
+
+For future live evaluation, configure `PATHSNAP_EVALUATOR_INPUT` and
+`PATHSNAP_EVALUATOR_REFERENCE` as separate server directories. The reference
+root contains `<inventory_trip_id>.route`, preserving any relative subfolders.
+The evaluator inventory stays empty unless explicitly configured. No reserved
+data was used in these development checks.
+
+Trip selection is preserved on refresh of the dropdown, and the request snapshots
+the chosen trip before controls become busy. JavaScript is served as `app.js`
+by both the integrated API and the separate UI app.
+
 ## Shared data integration
 
 The API now uses Member 1's `load_trip(with_reference=False)` and
@@ -19,7 +94,7 @@ python -m uvicorn route_recovery.main:app --host 0.0.0.0 --port 8000
 
 Trip IDs now follow the shared inventory (for example `00000052/00000052`).
 Clients must use IDs returned by `/trips`; arbitrary paths are never accepted.
-No reference route is loaded. Classifier integration is still pending.
+No reference route is loaded during feature preparation or prediction.
 
 ## Student-test execution check
 
@@ -32,8 +107,8 @@ explicit route discontinuities, not successful continuity or accuracy results.
 Investigate candidate coverage and decoder assumptions with the model owners
 before drawing conclusions or selecting decoder parameters.
 
-Distance-based emissions are a baseline, not the selected trained classifier.
-This module never reads reference route files and reports no accuracy metrics.
+Distance-based emissions remain a baseline; optional classifier emissions and
+isolated server-side reference evaluation are supported as described above.
 
 From the repository root, with requirements installed:
 
@@ -41,6 +116,10 @@ From the repository root, with requirements installed:
 python -m unittest discover -s tests -v
 uvicorn route_recovery.main:app --host 0.0.0.0 --port 8000
 ```
+
+For the verified artifact-compatible environment, install with
+`python -m pip install -r route_recovery/requirements-inference.txt`.
+This pins scikit-learn to 1.8.0 without changing the teammates' model definitions.
 
 Open http://localhost:8000. Laptop 2 can open http://LAPTOP_1_LAN_IP:8000 on
 the same network. Allow port 8000 if the firewall prompts. API logs appear on
@@ -77,11 +156,11 @@ engineering starting points, not optimised parameters.
 
 ## Remaining work
 
-- Integrate selected classifier emissions using the shared feature rows.
-- Validate reference alignment with the data/evaluation owners; implement
-  server-only evaluation and classifier-only versus HMM comparisons.
-- Add reserved evaluator-trip configuration without exposing ground truth.
+- Further model/decoder improvement, if pursued, must use grouped training
+  validation and examine reference-alignment ambiguity. The current measured
+  decrease is reported honestly; HGB is already the team's selected default.
+- Verify actual reserved evaluator paths when supplied for the live evaluation.
 - Verify the implemented separate UI deployment on two physical laptops.
-- Record actual dataset metrics, timings, maps and API evidence for the report.
+- Re-run integration verification when any teammate replaces a saved artifact.
 
 Synthetic tests verify behaviour; they are not experimental dataset results.

@@ -1,0 +1,3 @@
+# Saved team artifacts were verified with this scikit-learn version.
+-r ../requirements.txt
+scikit-learn==1.8.0

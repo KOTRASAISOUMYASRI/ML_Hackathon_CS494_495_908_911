@@ -1,4 +1,25 @@
 # ML_Hackathon_CS494_495_908_911
+## Integrated route-recovery application
+
+The [route-recovery guide](route_recovery/README.md) covers API/UI startup,
+classifier emissions, optional reference evaluation and the separate UI server.
+All five saved classifier families and the two optimized variants are connected.
+The team's selected default is **optimized HistGradientBoosting**. The main
+before/after HMM comparison is in the [selected-model report](reports/SELECTED_HGB_HMM.md).
+See [measured integration results](reports/integrated_models/SUMMARY.md) and
+[Member 4 status](reports/MEMBER4_STATUS.md) for verified behaviour and remaining
+validation/deployment boundaries. To use the artifact-compatible environment:
+
+```powershell
+python -m pip install -r route_recovery/requirements-inference.txt
+git lfs pull
+python -m uvicorn route_recovery.main:app --host 127.0.0.1 --port 8020
+```
+
+Open http://127.0.0.1:8020. Run `python -m route_recovery.verify_integration`
+to reproduce the saved-model integration checks without retraining.
+For two devices, follow the [Laptop 1/Laptop 2 setup](route_recovery/DEPLOYMENT.md).
+
 ## Member 1 dataset pipeline
 
 See [the model feature contract](FEATURE_CONTRACT.md) for the training schema.
