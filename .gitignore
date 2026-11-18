@@ -24,6 +24,13 @@ Thumbs.db
 .ruff_cache/
 .coverage
 htmlcov/
+<<<<<<< HEAD
 
 # Large datasets (shared separately)
 outputs/
+=======
+.env
+.vscode/
+.DS_Store
+outputs/
+>>>>>>> origin/main

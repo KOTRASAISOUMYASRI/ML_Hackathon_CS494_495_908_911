@@ -12,8 +12,15 @@ It records irregular intervals and gaps over 30 seconds. Motion features are
 masked across those gaps and across missing source rows.
 
 For each trip, a WGS84 azimuthal equidistant projection centered on its first
+<<<<<<< HEAD
 road node gives local metric coordinates. Verify each trip's extent is suitable
 for this local approximation. Finite-segment distances rank nearby candidates,
+=======
+road node gives local metric coordinates. Across the supplied data, the maximum
+geodesic distance from any projection center to a GPS observation or road node
+was 78.32 km in training and 42.20 km in student testing. Finite-segment
+distances rank nearby candidates,
+>>>>>>> origin/main
 with a nearest-arc fallback where the search radius is empty. Directed arc
 length, position, heading agreement, time and speed, candidate rank, and
 endpoint degrees capture local geometry, motion, and connectivity. Reference
@@ -54,7 +61,26 @@ describes coverage of the derived target.
 In a systematic sample of every twentieth miss from those two trips, 1,013
 of 1,074 observations were more than 50 m from every supplied reference arc.
 
+<<<<<<< HEAD
 The export generates per-trip coordinate bounds, interval summaries, and
 connectivity counts, plus EDA plots and a representative Folium map for each
 partition. Use these actual outputs for report figures. Once the model and
 decoder are integrated, add the predicted-route layer to the final team map.
+=======
+## Report figures
+
+- **Training EDA** (`outputs/train/eda_plots.png`). GPS trajectory and
+  sampling intervals for the first training trip, and distributions of
+  trajectory length and cleaned-row counts across 80 training trips.
+- **Student-test EDA** (`outputs/student_test/eda_plots.png`). GPS trajectory
+  and sampling intervals for trip `00000000`, and distributions of
+  trajectory length and cleaned-row counts across 10 student-test trips.
+- **Student-test Folium map** (`outputs/student_test/sample_map.html`).
+  Trip `00000000` shown with original GPS observations in blue, directed road
+  geometry in gray, and the supplied reference route in green. The layer
+  control shows or hides each dataset. The integrated route map can add the
+  classifier and decoder output when it becomes available.
+
+The per-trip export also includes coordinate bounds, interval summaries, and
+connectivity counts for both development partitions.
+>>>>>>> origin/main
