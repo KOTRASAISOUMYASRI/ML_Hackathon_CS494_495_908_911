@@ -79,9 +79,18 @@ class ClassifierInterfaceTests(unittest.TestCase):
                 self.assertEqual(changed.status_code, 422)
                 self.assertEqual(client.get('/app.js').status_code, 200)
 
-    def test_evaluator_is_disabled_until_server_configured(self):
+    def test_evaluator_inventory_uses_configured_input(self):
         from fastapi.testclient import TestClient
         from route_recovery import main
+        root = Path(self.directory.name) / 'evaluator'
+        trip = root / '00000001'
+        trip.mkdir(parents=True)
+        (trip / '00000001.track').write_text('8.0001 49 1\n')
+        (trip / '00000001.nodes').write_text('8 49\n8.001 49\n')
+        (trip / '00000001.arcs').write_text('0 1\n')
+        with patch.object(main, 'EVALUATOR_INPUT', str(root)):
+            client = TestClient(main.app)
+            self.assertEqual(client.get('/trips').json()['evaluator'], ['00000001/00000001'])
         with patch.object(main, 'EVALUATOR_INPUT', None):
             client = TestClient(main.app)
             self.assertEqual(client.get('/trips').json()['evaluator'], [])

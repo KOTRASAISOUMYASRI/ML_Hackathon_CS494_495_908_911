@@ -65,11 +65,12 @@ names. It reports per-trip results, pooled all-observation Top-1, mean per-trip
 road-arc Macro F1, continuity and inference time. No HMM accuracy improvement is
 assumed. Model selection and tuning decisions remain with the team.
 
-For future live evaluation, configure `PATHSNAP_EVALUATOR_INPUT` and
-`PATHSNAP_EVALUATOR_REFERENCE` as separate server directories. The reference
-root contains `<inventory_trip_id>.route`, preserving any relative subfolders.
-The evaluator inventory stays empty unless explicitly configured. No reserved
-data was used in these development checks.
+The evaluator input defaults to the repository's `evaluator_test` folder.
+Override it with `PATHSNAP_EVALUATOR_INPUT` when the uploaded data is elsewhere.
+Reference evaluation remains separate: configure `PATHSNAP_EVALUATOR_REFERENCE`
+to a server-side root containing `<inventory_trip_id>.route`, preserving any
+relative subfolders. The evaluator's route files are not read during inventory
+or prediction. No reserved data was used in these development checks.
 
 Trip selection is preserved on refresh of the dropdown, and the request snapshots
 the chosen trip before controls become busy. JavaScript is served as `app.js`
