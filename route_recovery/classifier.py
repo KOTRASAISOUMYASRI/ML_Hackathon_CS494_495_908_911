@@ -19,6 +19,8 @@ def model_paths():
     for name in ('random_forest', 'hist_gradient_boosting'):
         paths[name] = ROOT / 'outputs' / 'models' / f'{name}.joblib'
         paths[name + '_optimized'] = ROOT / 'outputs' / 'optimization' / f'{name}_optimized.joblib'
+    paths['hist_gradient_boosting_candidate_tuned'] = (
+        ROOT / 'outputs/optimization/hgb_fast/hist_gradient_boosting_candidate_tuned.joblib')
     if os.environ.get('PATHSNAP_MODEL_ARTIFACT'):
         paths['configured'] = Path(os.environ['PATHSNAP_MODEL_ARTIFACT'])
     return {name: path for name, path in paths.items() if path.is_file()}

@@ -12,7 +12,7 @@ from .main import app
 
 def write_summary(output, summaries):
     lines = ['# Saved-model integration results', '',
-             'All seven saved classifiers completed the ten student-test trips (19,160 observations each), API reference evaluation and map generation. No training or tuning was performed.', '',
+             f'All {len(summaries)} saved classifiers completed the ten student-test trips (19,160 observations each), API reference evaluation and map generation. This verification command performed no training or tuning.', '',
              '| Model | Independent Top-1 | HMM Top-1 | Independent continuity | HMM continuity | HMM road Macro F1 | Inference seconds |',
              '|---|---:|---:|---:|---:|---:|---:|']
     for row in summaries:

@@ -5,7 +5,7 @@ import json
 from .classifier import ROOT, model_paths
 
 SELECTED_MODEL = 'hist_gradient_boosting_optimized'
-SELECTED_LABEL = 'HistGradientBoosting (optimized)'
+SELECTED_LABEL = 'HistGradientBoosting (previous F1 tuned)'
 
 
 def selected_comparison():

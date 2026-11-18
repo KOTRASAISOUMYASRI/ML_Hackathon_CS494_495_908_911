@@ -19,7 +19,7 @@ from .selection import SELECTED_MODEL, selected_comparison
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_ROOT = Path(os.environ.get('PATHSNAP_DATA_ROOT', str(ROOT)))
-EVALUATOR_INPUT = os.environ.get('PATHSNAP_EVALUATOR_INPUT')
+EVALUATOR_INPUT = os.environ.get('PATHSNAP_EVALUATOR_INPUT', str(ROOT / 'evaluator_test'))
 EVALUATOR_REFERENCE = os.environ.get('PATHSNAP_EVALUATOR_REFERENCE')
 app = FastAPI(title='PathSnap development route recovery')
 app.add_middleware(CORSMiddleware,
