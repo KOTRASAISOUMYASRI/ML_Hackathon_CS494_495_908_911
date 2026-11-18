@@ -32,7 +32,7 @@ def optimize_model(
     def objective(trial):
         if model_name == "random_forest":
             params = {
-                "n_estimators": trial.suggest_int("n_estimators", 100, 300, step=50),
+                "n_estimators": trial.suggest_int("n_estimators", 50, 100, step=50),
                 "max_depth": trial.suggest_categorical(
                     "max_depth", [None, 20, 30, 40]
                 ),
@@ -45,9 +45,9 @@ def optimize_model(
                 "max_features": trial.suggest_categorical(
                     "max_features", ["sqrt", 0.7, 1.0]
                 ),
-                "class_weight": "balanced_subsample",
+                "class_weight": "balanced",
                 "random_state": random_state,
-                "n_jobs": -1,
+                "n_jobs": 1,
             }
             model = RandomForestClassifier(**params)
 
@@ -96,9 +96,9 @@ def optimize_model(
     if model_name == "random_forest":
         best_model = RandomForestClassifier(
             **study.best_params,
-            class_weight="balanced_subsample",
+            class_weight="balanced",
             random_state=random_state,
-            n_jobs=-1,
+            n_jobs=1,
         )
     else:
         best_model = HistGradientBoostingClassifier(
