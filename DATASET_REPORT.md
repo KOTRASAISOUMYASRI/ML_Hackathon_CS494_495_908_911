@@ -58,17 +58,29 @@ of 1,074 observations were more than 50 m from every supplied reference arc.
 
 ## Report figures
 
-- **Training EDA** (`outputs/train/eda_plots.png`). GPS trajectory and
-  sampling intervals for the first training trip, and distributions of
-  trajectory length and cleaned-row counts across 80 training trips.
-- **Student-test EDA** (`outputs/student_test/eda_plots.png`). GPS trajectory
-  and sampling intervals for trip `00000000`, and distributions of
-  trajectory length and cleaned-row counts across 10 student-test trips.
-- **Student-test Folium map** (`outputs/student_test/sample_map.html`).
-  Trip `00000000` shown with original GPS observations in blue, directed road
-  geometry in gray, and the supplied reference route in green. The layer
-  control shows or hides each dataset. The integrated route map can add the
-  classifier and decoder output when it becomes available.
+### Figure 1. Training data exploration
+
+![Training EDA plots showing GPS trajectory, sampling intervals, trajectory length, and GPS rows removed](docs/figures/training-eda.png)
+
+The top panels show the GPS trajectory and sampling intervals for trip
+`00000001`. The bottom panels summarize trajectory lengths and GPS rows removed
+across all 80 training trips.
+
+### Figure 2. Student-test data exploration
+
+![Student-test EDA plots showing GPS trajectory, sampling intervals, trajectory length, and GPS rows removed](docs/figures/student-test-eda.png)
+
+The top panels show the GPS trajectory and sampling intervals for trip
+`00000000`. The bottom panels summarize trajectory lengths and GPS rows removed
+across all 10 student-test trips.
+
+### Figure 3. Folium map of student-test trip 00000000
+
+![Folium screenshot of student-test trip 00000000 with GPS observations in blue, roads in gray, and the reference route in green](docs/figures/student-test-folium.png)
+
+Blue marks the original GPS observations, gray shows the road network, and
+green shows the supplied reference route. The interactive export at
+`outputs/student_test/sample_map.html` lets viewers toggle those layers.
 
 The per-trip export also includes coordinate bounds, interval summaries, and
 connectivity counts for both development partitions.
