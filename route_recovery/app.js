@@ -1,5 +1,6 @@
 const $ = id => document.getElementById(id);
-const partition = $('partition'), trip = $('trip'), button = $('run');
+const trip = $('trip'), button = $('run');
+const evaluatorPartition = 'evaluator';
 const modelLabels = {
   distance: 'Distance baseline', decision_tree: 'Decision Tree',
   logistic_regression: 'Logistic Regression', knn: 'KNN',
@@ -22,13 +23,13 @@ function message(text, error = false) {
 }
 function populate() {
   const selected = trip.value;
-  trip.replaceChildren(...(inventory[partition.value] || []).map(id => new Option(id, id)));
+  trip.replaceChildren(...(inventory[evaluatorPartition] || []).map(id => new Option(id, id)));
   if ([...trip.options].some(option => option.value === selected)) trip.value = selected;
   button.disabled = busy || !trip.options.length;
 }
 function setBusy(value) {
   busy = value;
-  for (const id of ['connect', 'api', 'partition', 'trip', 'model', 'evaluate']) $(id).disabled = value;
+  for (const id of ['connect', 'api', 'trip', 'model']) $(id).disabled = value;
   button.disabled = value || !trip.options.length;
 }
 function clearResults() {
@@ -60,8 +61,8 @@ async function connect() {
     if (!health.default_model_available) {
       throw Error('Selected HistGradientBoosting artifact is missing. Run git lfs pull on Laptop 1.');
     }
-    message(trip.options.length ? 'Connected. Select a trip and emission model.' :
-      'Connected, but no trips found. Check the server dataset directory.');
+    message(trip.options.length ? 'Connected. Select an evaluator trip.' :
+      'Connected, but no evaluator trips found. Configure the evaluator input folder on Laptop 1.');
   } catch (error) {
     inventory = {}; populate();
     message(`Connection failed: ${error.message}. Check the address, server and allowed UI origin.`, true);
@@ -134,11 +135,10 @@ function render(result) {
   renderEvaluation(result.evaluation);
 }
 $('connect').onclick = connect;
-partition.onchange = () => { clearResults(); populate(); };
 button.onclick = async () => {
-  // Snapshot BEFORE changing controls; rebuilding the dropdown used to reset the trip.
-  const payload = {partition: partition.value, trip_id: trip.value, model: $('model').value,
-    evaluate: $('evaluate').checked, diagnose: true};
+  if (!trip.value || busy) return;
+  const payload = {partition: evaluatorPartition, trip_id: trip.value, model: $('model').value,
+    evaluate: true, diagnose: true};
   clearResults(); setBusy(true); const started = Date.now(); message('Reconstructing route...');
   const timer = setInterval(() => message(`Reconstructing route: ${Math.floor((Date.now()-started)/1000)} seconds`), 1000);
   try {

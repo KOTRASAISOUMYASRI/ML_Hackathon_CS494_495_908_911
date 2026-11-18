@@ -130,6 +130,9 @@ enter Laptop 1's API address in the page. See [deployment steps](DEPLOYMENT.md)
 for allowed origins, network configuration and physical-device verification.
 The UI shows runtime, matched/unmatched counts, road sections, break details
 and map layers. The `/visualize` endpoint returns the results and map together.
+The trip picker uses the evaluator partition and automatically requests
+server-side reference scoring. Development partitions are available through
+the API and its connection check.
 Diagnostic mode reports why transitions failed without changing predictions;
 see [measured findings](../reports/ROUTE_BREAK_FINDINGS.md).
 
