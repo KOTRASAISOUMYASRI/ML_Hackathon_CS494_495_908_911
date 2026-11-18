@@ -9,3 +9,9 @@ htmlcov/
 .env
 .vscode/
 .DS_Store
+outputs/
+
+# Local datasets and generated outputs
+Student folder/
+Processed Dataset/
+outputs/
