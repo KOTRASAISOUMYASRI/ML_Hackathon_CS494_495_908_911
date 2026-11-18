@@ -1,0 +1,175 @@
+{
+  "scope": "Ten student-test development trips; identical derived labels and candidates; no retraining",
+  "positive_candidates": 19081,
+  "negative_candidates": 94558,
+  "models": [
+    {
+      "model": "hist_gradient_boosting",
+      "candidate_rows": 113639,
+      "observations": 19160,
+      "candidate_accuracy": 0.9376358468483531,
+      "positive_precision": 0.8310333406933098,
+      "positive_recall": 0.7890047691420785,
+      "positive_f1": 0.8094738823023362,
+      "binary_macro_f1": 0.886094888552539,
+      "log_loss": 0.15188371002650758,
+      "top1_all_observations": 0.8210334029227557,
+      "artifact_sha256": "9ea9960bec24e870541f13a897309392e7ee4eb0d9952b2094befd31ffc273b5",
+      "confusion_matrix": [
+        [
+          91497,
+          3061
+        ],
+        [
+          4026,
+          15055
+        ]
+      ]
+    },
+    {
+      "model": "hist_gradient_boosting_optimized",
+      "candidate_rows": 113639,
+      "observations": 19160,
+      "candidate_accuracy": 0.9097404940205387,
+      "positive_precision": 0.6662646970153754,
+      "positive_recall": 0.9265761752528694,
+      "positive_f1": 0.7751496152750071,
+      "binary_macro_f1": 0.8593436518032849,
+      "log_loss": 0.21583502110279554,
+      "top1_all_observations": 0.8191544885177453,
+      "artifact_sha256": "003d635c7ff74cf09e24439985bbf0a5ce778ee0da5a83a8d6007064f3aa51fa",
+      "confusion_matrix": [
+        [
+          85702,
+          8856
+        ],
+        [
+          1401,
+          17680
+        ]
+      ]
+    }
+  ],
+  "trips": [
+    {
+      "model": "hist_gradient_boosting",
+      "trip_id": "00000000/00000000",
+      "observations": 2503,
+      "correct_top1": 2318
+    },
+    {
+      "model": "hist_gradient_boosting_optimized",
+      "trip_id": "00000000/00000000",
+      "observations": 2503,
+      "correct_top1": 2313
+    },
+    {
+      "model": "hist_gradient_boosting",
+      "trip_id": "00000007/00000007",
+      "observations": 1354,
+      "correct_top1": 1243
+    },
+    {
+      "model": "hist_gradient_boosting_optimized",
+      "trip_id": "00000007/00000007",
+      "observations": 1354,
+      "correct_top1": 1245
+    },
+    {
+      "model": "hist_gradient_boosting",
+      "trip_id": "00000009/00000009",
+      "observations": 1049,
+      "correct_top1": 866
+    },
+    {
+      "model": "hist_gradient_boosting_optimized",
+      "trip_id": "00000009/00000009",
+      "observations": 1049,
+      "correct_top1": 868
+    },
+    {
+      "model": "hist_gradient_boosting",
+      "trip_id": "00000040/00000040",
+      "observations": 2995,
+      "correct_top1": 2619
+    },
+    {
+      "model": "hist_gradient_boosting_optimized",
+      "trip_id": "00000040/00000040",
+      "observations": 2995,
+      "correct_top1": 2624
+    },
+    {
+      "model": "hist_gradient_boosting",
+      "trip_id": "00000052/00000052",
+      "observations": 262,
+      "correct_top1": 245
+    },
+    {
+      "model": "hist_gradient_boosting_optimized",
+      "trip_id": "00000052/00000052",
+      "observations": 262,
+      "correct_top1": 247
+    },
+    {
+      "model": "hist_gradient_boosting",
+      "trip_id": "00000056/00000056",
+      "observations": 3958,
+      "correct_top1": 3405
+    },
+    {
+      "model": "hist_gradient_boosting_optimized",
+      "trip_id": "00000056/00000056",
+      "observations": 3958,
+      "correct_top1": 3402
+    },
+    {
+      "model": "hist_gradient_boosting",
+      "trip_id": "00000065/00000065",
+      "observations": 768,
+      "correct_top1": 612
+    },
+    {
+      "model": "hist_gradient_boosting_optimized",
+      "trip_id": "00000065/00000065",
+      "observations": 768,
+      "correct_top1": 613
+    },
+    {
+      "model": "hist_gradient_boosting",
+      "trip_id": "00000076/00000076",
+      "observations": 1486,
+      "correct_top1": 1173
+    },
+    {
+      "model": "hist_gradient_boosting_optimized",
+      "trip_id": "00000076/00000076",
+      "observations": 1486,
+      "correct_top1": 1167
+    },
+    {
+      "model": "hist_gradient_boosting",
+      "trip_id": "00000077/00000077",
+      "observations": 3911,
+      "correct_top1": 2533
+    },
+    {
+      "model": "hist_gradient_boosting_optimized",
+      "trip_id": "00000077/00000077",
+      "observations": 3911,
+      "correct_top1": 2504
+    },
+    {
+      "model": "hist_gradient_boosting",
+      "trip_id": "00000091/00000091",
+      "observations": 874,
+      "correct_top1": 717
+    },
+    {
+      "model": "hist_gradient_boosting_optimized",
+      "trip_id": "00000091/00000091",
+      "observations": 874,
+      "correct_top1": 712
+    }
+  ]
+}
