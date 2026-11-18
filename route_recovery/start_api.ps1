@@ -1,7 +1,9 @@
 param(
     [int]$Port = 8000,
     [string]$DataRoot = '',
-    [string]$UiOrigins = 'http://localhost:8080,http://127.0.0.1:8080'
+    [string]$UiOrigins = 'http://localhost:8080,http://127.0.0.1:8080',
+    [string]$EvaluatorInput = '',
+    [string]$EvaluatorReference = ''
 )
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
@@ -10,6 +12,8 @@ if (-not (Test-Path -LiteralPath $interpreter)) {
     throw 'Create .venv and install route_recovery/requirements-inference.txt first.'
 }
 if ($DataRoot) { $env:PATHSNAP_DATA_ROOT = $DataRoot }
+if ($EvaluatorInput) { $env:PATHSNAP_EVALUATOR_INPUT = (Resolve-Path -LiteralPath $EvaluatorInput).Path }
+if ($EvaluatorReference) { $env:PATHSNAP_EVALUATOR_REFERENCE = (Resolve-Path -LiteralPath $EvaluatorReference).Path }
 $env:PATHSNAP_UI_ORIGINS = $UiOrigins
 Push-Location $projectRoot
 try {

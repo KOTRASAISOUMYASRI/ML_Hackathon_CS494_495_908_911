@@ -43,7 +43,13 @@ This evidence does not identify one proven cause of every wrong assignment. Furt
 
 ## Review demonstration
 
-Open the separate UI at http://localhost:8080 and connect it to Laptop 1. The aggregate panel shows the table above. Select trip 00000052/00000052 and enable Reference evaluation to demonstrate live inference. Its Top-1 improves from 94.27% to 99.62%, while the full dataset result decreases. Toggle purple independent segments and green reconstructed sections on the map.
+For the authorized evaluation, open the separate UI at http://localhost:8080,
+connect to Laptop 1, and select an evaluator trip. Scoring runs automatically.
+The aggregate panel shows the development comparison above. For a student-test
+rehearsal, use the documented connection check on trip `00000052/00000052`.
+Its Top-1 improves from 94.27% to 99.62%, while the full development result
+decreases. On the map, purple shows independent segments and green shows
+reconstructed sections.
 
 See [two-laptop instructions](../route_recovery/DEPLOYMENT.md) and [local connection evidence](local_separate_ui_api_check.json). The latter proves a same-computer HTTP check, not a physical two-laptop run.
 
