@@ -15,13 +15,13 @@ For each trip, a WGS84 azimuthal equidistant projection centered on its first
 road node gives local metric coordinates. Across the supplied data, the maximum
 geodesic distance from any projection center to a GPS observation or road node
 was 78.32 km in training and 42.20 km in student testing. Finite-segment
-distances rank nearby candidates,
-with a nearest-arc fallback where the search radius is empty. Directed arc
-length, position, heading agreement, time and speed, candidate rank, and
-endpoint degrees capture local geometry, motion, and connectivity. Reference
-routes are aligned in traversal order by minimizing squared segment distances.
-These derived labels can be uncertain around parallel roads or junctions.
-Measure candidate misses before interpreting classifier performance.
+distances rank nearby candidates, with a nearest-arc fallback where the search
+radius is empty. Directed arc length, position, heading agreement, time and
+speed, candidate rank, and endpoint degrees capture local geometry, motion,
+and connectivity. Reference routes are aligned in traversal order by minimizing
+squared segment distances. These derived labels can be uncertain around
+parallel roads or junctions. Measure candidate misses before interpreting
+classifier performance.
 
 ## Findings from Student folder.zip
 
@@ -53,6 +53,7 @@ trip-local records. Training trips `00000054` and `00000033` account for
 21,449 of the 24,180 training misses. Misses include effects of the inferred
 reference alignment as well as the candidate radius and cap, so this measure
 describes coverage of the derived target.
+
 In a systematic sample of every twentieth miss from those two trips, 1,013
 of 1,074 observations were more than 50 m from every supplied reference arc.
 
@@ -72,3 +73,8 @@ of 1,074 observations were more than 50 m from every supplied reference arc.
 
 The per-trip export also includes coordinate bounds, interval summaries, and
 connectivity counts for both development partitions.
+
+The export generates per-trip coordinate bounds, interval summaries, and
+connectivity counts, plus EDA plots and a representative Folium map for each
+partition. Use these actual outputs for report figures. Once the model and
+decoder are integrated, add the predicted-route layer to the final team map.
