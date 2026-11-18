@@ -1,3 +1,4 @@
+
 # Python cache files
 __pycache__/
 *.py[cod]
@@ -25,5 +26,9 @@ Thumbs.db
 .coverage
 htmlcov/
 
-# Large datasets (shared separately)
+# Local datasets and generated outputs
+Student folder/
+Processed Dataset/
 outputs/
+
+# Large datasets (shared separately)
