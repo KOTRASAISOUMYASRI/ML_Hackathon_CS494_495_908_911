@@ -1,5 +1,37 @@
 # Development route recovery
 
+## Shared data integration
+
+The API now uses Member 1's `load_trip(with_reference=False)` and
+`build_feature_table(labeled=False)` through `data_adapter.py`. Candidate lists,
+order, distances and fractions come directly from the training feature table.
+Defaults match the feature contract: radius 50 m, up to 8 directed arcs, and
+nearest-arc fallback. Projection is the shared local azimuthal equidistant CRS.
+Original observation IDs are returned, and removed rows split decoding sections.
+The old standalone RoadTrip remains only for isolated decoder tests.
+
+Set the dataset parent directory before starting, if it is outside the repo:
+
+```powershell
+$env:PATHSNAP_DATA_ROOT = 'C:/path/to/Student folder'
+python -m uvicorn route_recovery.main:app --host 0.0.0.0 --port 8000
+```
+
+Trip IDs now follow the shared inventory (for example `00000052/00000052`).
+Clients must use IDs returned by `/trips`; arbitrary paths are never accepted.
+No reference route is loaded. Classifier integration is still pending.
+
+## Student-test execution check
+
+Run `python -m route_recovery.check_trips student_test` to reproduce the
+execution check. Measured results are in
+[`../reports/student_test_execution.json`](../reports/student_test_execution.json).
+All ten supplied student-test trips completed with valid output shapes. Some
+have many unreachable-transition breaks (97 for trip 00000040); these are
+explicit route discontinuities, not successful continuity or accuracy results.
+Investigate candidate coverage and decoder assumptions with the model owners
+before drawing conclusions or selecting decoder parameters.
+
 Distance-based emissions are a baseline, not the selected trained classifier.
 This module never reads reference route files and reports no accuracy metrics.
 
@@ -32,15 +64,13 @@ Dijkstra includes partial end arcs. Speed and timestamp gap thresholds are
 configurable. No candidates or impossible transitions produce explicit breaks;
 missing matches remain null and geometry never bridges a break.
 
-The loader and exhaustive candidate scan are replaceable adapters for the data
-owner's modules. Dijkstra uses a bounded cache. Benchmark large trips before
-demonstration. Local equirectangular projection is a baseline requiring distortion
-checks for the dataset extent. Defaults are engineering starting points, not
-optimised parameters.
+The API uses the shared indexed candidate queries. Dijkstra uses a bounded
+cache. Benchmark large trips before demonstration. Decoder scoring defaults are
+engineering starting points, not optimised parameters.
 
 ## Remaining work
 
-- Integrate official candidates/features and selected classifier emissions.
+- Integrate selected classifier emissions using the shared feature rows.
 - Validate reference alignment with the data/evaluation owners; implement
   server-only evaluation and classifier-only versus HMM comparisons.
 - Add reserved evaluator-trip configuration without exposing ground truth.

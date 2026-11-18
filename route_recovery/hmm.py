@@ -106,7 +106,7 @@ class RoadTrip:
         return partial + distance, path
 
 
-def recover(trip, *, candidate_count=5, radius_m=100, sigma_m=20, beta_m=30,
+def recover(trip, *, candidate_count=8, radius_m=50, sigma_m=20, beta_m=30,
             max_gap_s=30, max_speed_mps=60, scorer=None):
     """scorer(observation, candidates) returns aligned natural-log scores.
 
@@ -115,7 +115,8 @@ def recover(trip, *, candidate_count=5, radius_m=100, sigma_m=20, beta_m=30,
     """
     if any(not isfinite(x) or x <= 0 for x in (radius_m, sigma_m, beta_m, max_gap_s, max_speed_mps)) or candidate_count < 1:
         raise ValueError('Configuration values must be positive and finite')
-    candidates = [trip.candidates(o, candidate_count, radius_m) for o in trip.track]
+    candidates = (trip.candidate_rows if hasattr(trip, 'candidate_rows') else
+                  [trip.candidates(o, candidate_count, radius_m) for o in trip.track])
     emissions = []
     for observation, row in zip(trip.track, candidates):
         values = list(scorer(observation, row)) if scorer is not None and row else [-0.5 * (c.distance_m / sigma_m) ** 2 for c in row]
@@ -146,6 +147,12 @@ def recover(trip, *, candidate_count=5, radius_m=100, sigma_m=20, beta_m=30,
             start, active, forward = t, [emissions[t]], list(emissions[t])
             continue
         dt = trip.track[t][2] - trip.track[t - 1][2]
+        ids = getattr(trip, 'observation_ids', None)
+        if ids is not None and ids[t] != ids[t - 1] + 1:
+            flush()
+            breaks.append({'observation': t, 'reason': 'removed_observations'})
+            start, active, matrices, forward = t, [emissions[t]], [], list(emissions[t])
+            continue
         if dt > max_gap_s:
             flush()
             breaks.append({'observation': t, 'reason': 'timestamp_gap'})
@@ -179,6 +186,7 @@ def recover(trip, *, candidate_count=5, radius_m=100, sigma_m=20, beta_m=30,
             points.append(trip.unproject(b.xy))
         geometry.append(points)
     return {'mode': 'classifier_hmm' if scorer else 'distance_baseline_hmm',
+            'observation_ids': getattr(trip, 'observation_ids', list(range(len(selected)))),
             'arc_ids': [c.arc_id if c else None for c in selected],
             'independent_arc_ids': [row[max(range(len(row)), key=lambda j: emissions[t][j])].arc_id if row and any(isfinite(v) for v in emissions[t]) else None for t, row in enumerate(candidates)],
             'route_sections': geometry, 'breaks': breaks,

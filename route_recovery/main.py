@@ -1,6 +1,7 @@
 """Development API: uvicorn route_recovery.main:app --host 0.0.0.0."""
 import logging
 import time
+import os
 from pathlib import Path
 
 import folium
@@ -8,17 +9,20 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel, Field
 
-from .hmm import RoadTrip, recover
+from .hmm import recover
+from .data_adapter import SharedRoadTrip
+from data_loader import discover_trips
 
 ROOT = Path(__file__).resolve().parents[1]
+DATA_ROOT = Path(os.environ.get('PATHSNAP_DATA_ROOT', str(ROOT)))
 app = FastAPI(title='PathSnap development route recovery')
 
 
 class MatchRequest(BaseModel):
-    trip_id: str = Field(pattern=r'^\d{8}$')
+    trip_id: str = Field(min_length=1)
     partition: str = Field(default='student_test', pattern=r'^(train|student_test)$')
-    candidate_count: int = Field(default=5, ge=1, le=10)
-    radius_m: float = Field(default=100, gt=0, le=500)
+    candidate_count: int = Field(default=8, ge=1, le=10)
+    radius_m: float = Field(default=50, gt=0, le=500)
 
 
 @app.get('/health')
@@ -28,20 +32,29 @@ def health():
 
 @app.get('/trips')
 def trips():
-    return {part: sorted(p.name for p in (ROOT / part).iterdir() if p.is_dir()
-                         and (p / (p.name + '.track')).is_file())
-            if (ROOT / part).exists() else [] for part in ('train', 'student_test')}
+    return {part: list(inventory(part)) for part in ('train', 'student_test')}
+
+
+def inventory(partition):
+    folder = DATA_ROOT / partition
+    if not folder.is_dir():
+        return {}
+    try:
+        return {files.trip_id: files for files in discover_trips(folder)}
+    except ValueError as exc:
+        logging.getLogger('uvicorn.error').warning('Dataset inventory: %s', exc)
+        return {}
 
 
 @app.post('/match')
 def match(request: MatchRequest):
-    folder = ROOT / request.partition / request.trip_id
-    if not (folder / (request.trip_id + '.track')).is_file():
+    files = inventory(request.partition).get(request.trip_id)
+    if files is None:
         raise HTTPException(404, 'Trip not found')
     started = time.perf_counter()
     logging.getLogger('uvicorn.error').info('Starting route reconstruction: %s/%s', request.partition, request.trip_id)
     try:
-        trip = RoadTrip(folder, request.trip_id)
+        trip = SharedRoadTrip(files, radius_m=request.radius_m, max_candidates=request.candidate_count)
         result = recover(trip, candidate_count=request.candidate_count, radius_m=request.radius_m)
     except (ValueError, IndexError, FileNotFoundError) as exc:
         raise HTTPException(422, str(exc)) from exc
