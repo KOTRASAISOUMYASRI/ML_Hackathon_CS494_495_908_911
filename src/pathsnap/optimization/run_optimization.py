@@ -16,43 +16,69 @@ DATA = ROOT / "Processed Dataset" / "outputs" / "train" / "candidates.csv"
 OUTPUT = ROOT / "outputs" / "optimization"
 OUTPUT.mkdir(parents=True, exist_ok=True)
 
-print("Loading training data...", flush=True)
+RANDOM_STATE = 42
+SEARCH_TRIPS = 20
+N_TRIALS = 4
+N_SPLITS = 3
 
+print("Loading training data...", flush=True)
 df = pd.read_csv(DATA, dtype={"trip_id": str})
 
-X = df[FEATURE_COLUMNS]
-y = df[TARGET_COLUMN]
-groups = df["trip_id"]
-
 print("Training rows:", len(df), flush=True)
-print("Unique trips:", groups.nunique(), flush=True)
+print("Total trips:", df["trip_id"].nunique(), flush=True)
 
-print("\nStarting Random Forest optimisation...", flush=True)
+# Select complete trips, not random candidate rows.
+all_trips = sorted(df["trip_id"].unique())
+rng = pd.Series(all_trips).sample(
+    n=min(SEARCH_TRIPS, len(all_trips)),
+    random_state=RANDOM_STATE,
+).tolist()
 
-start = time.time()
+search_df = df[df["trip_id"].isin(rng)].copy()
 
-best_model, study = optimize_model(
-    model_name="random_forest",
-    X=X,
-    y=y,
-    groups=groups,
-    n_trials=2,
-    random_state=42,
-)
+X_search = search_df[FEATURE_COLUMNS]
+y_search = search_df[TARGET_COLUMN]
+groups_search = search_df["trip_id"]
 
-print("\nOptimisation completed!", flush=True)
-print("Best CV F1:", study.best_value, flush=True)
-print("Best parameters:", study.best_params, flush=True)
-print("Total time:", round(time.time() - start, 2), "seconds", flush=True)
+X_full = df[FEATURE_COLUMNS]
+y_full = df[TARGET_COLUMN]
 
-joblib.dump(
-    best_model,
-    OUTPUT / "random_forest_optimized.joblib",
-)
+print("Search trips:", len(rng), flush=True)
+print("Search rows:", len(search_df), flush=True)
+print("Final refit rows:", len(df), flush=True)
 
-study.trials_dataframe().to_csv(
-    OUTPUT / "random_forest_trials.csv",
-    index=False,
-)
+models = ["random_forest", "hist_gradient_boosting"]
 
-print("Optimised model and trial results saved.", flush=True)
+for model_name in models:
+    print(f"\nStarting {model_name} optimization...", flush=True)
+    start = time.time()
+
+    best_model, study = optimize_model(
+        model_name=model_name,
+        X=X_search,
+        y=y_search,
+        groups=groups_search,
+        n_trials=N_TRIALS,
+        n_splits=N_SPLITS,
+        refit_X=X_full,
+        refit_y=y_full,
+        random_state=RANDOM_STATE,
+    )
+
+    joblib.dump(
+        best_model,
+        OUTPUT / f"{model_name}_optimized.joblib",
+    )
+
+    study.trials_dataframe().to_csv(
+        OUTPUT / f"{model_name}_trials.csv",
+        index=False,
+    )
+
+    print(f"{model_name} completed!", flush=True)
+    print("Best CV F1:", study.best_value, flush=True)
+    print("Best parameters:", study.best_params, flush=True)
+    print("Time:", round(time.time() - start, 2), "seconds", flush=True)
+
+print("\nBoth optimizations completed.", flush=True)
+print("Results saved in:", OUTPUT, flush=True)

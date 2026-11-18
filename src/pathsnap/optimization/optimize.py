@@ -1,3 +1,4 @@
+
 import optuna
 import pandas as pd
 
@@ -13,10 +14,13 @@ def optimize_model(
     X,
     y,
     groups,
-    n_trials=10,
+    n_trials=4,
+    n_splits=3,
+    refit_X=None,
+    refit_y=None,
     random_state=42,
 ):
-    """Tune a selected classifier using grouped 5-fold CV."""
+    """Tune on a trip-level subset and optionally refit on all training data."""
 
     if model_name not in {"random_forest", "hist_gradient_boosting"}:
         raise ValueError("Unsupported model name")
@@ -24,26 +28,26 @@ def optimize_model(
     if len(X) != len(y) or len(X) != len(groups):
         raise ValueError("X, y and groups must have equal lengths")
 
-    if pd.Series(groups).nunique() < 5:
-        raise ValueError("At least 5 unique trips are required")
+    if pd.Series(groups).nunique() < n_splits:
+        raise ValueError("Not enough unique trips for cross-validation")
 
-    cv = GroupKFold(n_splits=5)
+    cv = GroupKFold(n_splits=n_splits)
 
     def objective(trial):
         if model_name == "random_forest":
             params = {
                 "n_estimators": trial.suggest_int("n_estimators", 50, 100, step=50),
                 "max_depth": trial.suggest_categorical(
-                    "max_depth", [None, 20, 30, 40]
+                    "max_depth", [15, 25, None]
                 ),
                 "min_samples_split": trial.suggest_int(
-                    "min_samples_split", 2, 10
+                    "min_samples_split", 2, 8
                 ),
                 "min_samples_leaf": trial.suggest_int(
-                    "min_samples_leaf", 1, 5
+                    "min_samples_leaf", 2, 8
                 ),
                 "max_features": trial.suggest_categorical(
-                    "max_features", ["sqrt", 0.7, 1.0]
+                    "max_features", ["sqrt", 0.7]
                 ),
                 "class_weight": "balanced",
                 "random_state": random_state,
@@ -54,17 +58,17 @@ def optimize_model(
         else:
             params = {
                 "learning_rate": trial.suggest_float(
-                    "learning_rate", 0.03, 0.2, log=True
+                    "learning_rate", 0.04, 0.15, log=True
                 ),
-                "max_iter": trial.suggest_int("max_iter", 100, 300, step=50),
+                "max_iter": trial.suggest_int("max_iter", 80, 180, step=50),
                 "max_leaf_nodes": trial.suggest_int(
-                    "max_leaf_nodes", 15, 63
+                    "max_leaf_nodes", 15, 40
                 ),
                 "min_samples_leaf": trial.suggest_int(
-                    "min_samples_leaf", 10, 50
+                    "min_samples_leaf", 20, 50
                 ),
                 "l2_regularization": trial.suggest_float(
-                    "l2_regularization", 1e-4, 10.0, log=True
+                    "l2_regularization", 0.001, 5.0, log=True
                 ),
                 "early_stopping": True,
                 "class_weight": "balanced",
@@ -93,22 +97,23 @@ def optimize_model(
 
     study.optimize(objective, n_trials=n_trials)
 
-    if model_name == "random_forest":
-        best_model = RandomForestClassifier(
-            **study.best_params,
-            class_weight="balanced",
-            random_state=random_state,
-            n_jobs=1,
-        )
-    else:
-        best_model = HistGradientBoostingClassifier(
-            **study.best_params,
-            early_stopping=True,
-            class_weight="balanced",
-            random_state=random_state,
-        )
+    final_X = refit_X if refit_X is not None else X
+    final_y = refit_y if refit_y is not None else y
 
-    best_model.fit(X, y)
+    final_params = study.best_params.copy()
+    final_params.update({
+        "class_weight": "balanced",
+        "random_state": random_state,
+    })
+
+    if model_name == "random_forest":
+        final_params["n_jobs"] = 1
+        best_model = RandomForestClassifier(**final_params)
+    else:
+        final_params["early_stopping"] = True
+        best_model = HistGradientBoostingClassifier(**final_params)
+
+    best_model.fit(final_X, final_y)
 
     study.trials_dataframe().to_csv(
         f"{model_name}_optuna_trials.csv", index=False
