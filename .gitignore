@@ -1,8 +1,7 @@
-
 # Python cache files
 __pycache__/
 *.py[cod]
-*.pyo
+*.pyo/
 
 # Virtual environments
 venv/
@@ -17,8 +16,14 @@ env/
 .DS_Store
 Thumbs.db
 
-# Large datasets (provided separately)
-outputs/
+# Environment variables
+.env
 
-# Raw datasets (shared separately)
+# Test and coverage files
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Large datasets (shared separately)
 outputs/
