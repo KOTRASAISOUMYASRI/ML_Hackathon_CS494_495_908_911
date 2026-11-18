@@ -1,0 +1,124 @@
+{
+  "created_utc": "2026-11-18T06:26:46.522822+00:00",
+  "scope": "Execution and output-shape checks only; no accuracy claims or reference reads.",
+  "configuration": {
+    "radius_m": 50,
+    "max_candidates": 8,
+    "sigma_m": 20,
+    "beta_m": 30,
+    "max_gap_s": 30,
+    "max_speed_mps": 60
+  },
+  "trips": [
+    {
+      "trip_id": "00000000/00000000",
+      "status": "passed",
+      "observations": 2503,
+      "matched": 2503,
+      "sections": 14,
+      "breaks": {
+        "unreachable_transition": 13
+      },
+      "seconds": 3.3297
+    },
+    {
+      "trip_id": "00000007/00000007",
+      "status": "passed",
+      "observations": 1354,
+      "matched": 1354,
+      "sections": 85,
+      "breaks": {
+        "unreachable_transition": 84
+      },
+      "seconds": 1.2561
+    },
+    {
+      "trip_id": "00000009/00000009",
+      "status": "passed",
+      "observations": 1049,
+      "matched": 1049,
+      "sections": 7,
+      "breaks": {
+        "unreachable_transition": 6
+      },
+      "seconds": 1.6654
+    },
+    {
+      "trip_id": "00000040/00000040",
+      "status": "passed",
+      "observations": 2995,
+      "matched": 2995,
+      "sections": 98,
+      "breaks": {
+        "unreachable_transition": 97
+      },
+      "seconds": 3.2375
+    },
+    {
+      "trip_id": "00000052/00000052",
+      "status": "passed",
+      "observations": 262,
+      "matched": 262,
+      "sections": 1,
+      "breaks": {},
+      "seconds": 0.5103
+    },
+    {
+      "trip_id": "00000056/00000056",
+      "status": "passed",
+      "observations": 3958,
+      "matched": 3958,
+      "sections": 23,
+      "breaks": {
+        "unreachable_transition": 22
+      },
+      "seconds": 5.2692
+    },
+    {
+      "trip_id": "00000065/00000065",
+      "status": "passed",
+      "observations": 768,
+      "matched": 768,
+      "sections": 15,
+      "breaks": {
+        "timestamp_gap": 1,
+        "unreachable_transition": 13
+      },
+      "seconds": 1.1778
+    },
+    {
+      "trip_id": "00000076/00000076",
+      "status": "passed",
+      "observations": 1486,
+      "matched": 1486,
+      "sections": 6,
+      "breaks": {
+        "unreachable_transition": 4,
+        "timestamp_gap": 1
+      },
+      "seconds": 2.6705
+    },
+    {
+      "trip_id": "00000077/00000077",
+      "status": "passed",
+      "observations": 3911,
+      "matched": 3911,
+      "sections": 86,
+      "breaks": {
+        "unreachable_transition": 85
+      },
+      "seconds": 4.7107
+    },
+    {
+      "trip_id": "00000091/00000091",
+      "status": "passed",
+      "observations": 874,
+      "matched": 874,
+      "sections": 9,
+      "breaks": {
+        "unreachable_transition": 8
+      },
+      "seconds": 1.2741
+    }
+  ]
+}

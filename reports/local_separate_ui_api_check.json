@@ -1,0 +1,67 @@
+{
+  "api": "http://127.0.0.1:8000",
+  "ui_origin": "http://localhost:8080",
+  "checks": [
+    {
+      "path": "/health",
+      "method": "GET",
+      "received_bytes": 293
+    },
+    {
+      "path": "/trips",
+      "method": "GET",
+      "received_bytes": 1843
+    },
+    {
+      "path": "/visualize",
+      "method": "OPTIONS",
+      "received_bytes": 2
+    },
+    {
+      "path": "/visualize",
+      "method": "POST",
+      "received_bytes": 382642
+    }
+  ],
+  "ok": true,
+  "model": "hist_gradient_boosting_optimized",
+  "student_test_trips": 10,
+  "received_route": {
+    "trip_id": "00000052/00000052",
+    "model": "hist_gradient_boosting_optimized",
+    "elapsed_seconds": 0.5410841999691911,
+    "matched_observations": 262,
+    "unmatched_observations": 0,
+    "section_count": 1,
+    "evaluation": {
+      "reference_method": "Derived ordered geometric alignment; labels may be ambiguous",
+      "observations": 262,
+      "candidate_misses": 0,
+      "candidate_miss_rate": 0.0,
+      "independent": {
+        "top1_accuracy": 0.9427480916030534,
+        "road_arc_macro_f1": 0.77572601010101,
+        "exact_trip_match": false,
+        "continuity": {
+          "valid_pairs": 251,
+          "eligible_pairs": 261,
+          "fraction": 0.9616858237547893
+        }
+      },
+      "hmm": {
+        "top1_accuracy": 0.9961832061068703,
+        "road_arc_macro_f1": 0.9942627653471027,
+        "exact_trip_match": false,
+        "continuity": {
+          "valid_pairs": 261,
+          "eligible_pairs": 261,
+          "fraction": 1.0
+        }
+      },
+      "candidate": {
+        "macro_f1": 0.9458915438599771,
+        "log_loss": 0.0971099731780789
+      }
+    }
+  }
+}

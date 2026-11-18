@@ -1,0 +1,3 @@
+# Laptop 2 only serves HTML/JavaScript; it does not load data or ML artifacts.
+fastapi
+uvicorn[standard]
