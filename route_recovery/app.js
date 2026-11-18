@@ -5,7 +5,8 @@ const modelLabels = {
   logistic_regression: 'Logistic Regression', knn: 'KNN',
   random_forest: 'Random Forest (baseline)', random_forest_optimized: 'Random Forest (optimized)',
   hist_gradient_boosting: 'HistGradientBoosting (baseline)',
-  hist_gradient_boosting_optimized: 'HistGradientBoosting (optimized)'
+  hist_gradient_boosting_optimized: 'HistGradientBoosting (previous F1 tuned)',
+  hist_gradient_boosting_candidate_tuned: 'HistGradientBoosting (accuracy tuned)'
 };
 let inventory = {}, busy = false, modelInitialized = false;
 $('api').value = localStorage.getItem('pathsnap-api') ||
@@ -88,6 +89,7 @@ function comparisonTable(independent, hmm, aggregate = false) {
 }
 function renderSelectedComparison(data) {
   $('selectedModel').hidden = false;
+  $('selectedTitle').textContent = `Saved comparison: ${data.label} before and after HMM`;
   $('selectedValues').replaceChildren();
   const note = document.createElement('p');
   if (!data.report_available) {

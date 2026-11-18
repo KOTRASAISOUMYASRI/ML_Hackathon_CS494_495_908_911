@@ -1,0 +1,37 @@
+{
+  "model": "hist_gradient_boosting_candidate_tuned",
+  "trip_id": "00000052/00000052",
+  "elapsed_seconds": 0.6575151000288315,
+  "matched_observations": 262,
+  "section_count": 1,
+  "evaluation": {
+    "reference_method": "Derived ordered geometric alignment; labels may be ambiguous",
+    "observations": 262,
+    "candidate_misses": 0,
+    "candidate_miss_rate": 0.0,
+    "independent": {
+      "top1_accuracy": 0.9389312977099237,
+      "road_arc_macro_f1": 0.7665833593668645,
+      "exact_trip_match": false,
+      "continuity": {
+        "valid_pairs": 250,
+        "eligible_pairs": 261,
+        "fraction": 0.9578544061302682
+      }
+    },
+    "hmm": {
+      "top1_accuracy": 0.9923664122137404,
+      "road_arc_macro_f1": 0.9813440527726242,
+      "exact_trip_match": false,
+      "continuity": {
+        "valid_pairs": 261,
+        "eligible_pairs": 261,
+        "fraction": 1.0
+      }
+    },
+    "candidate": {
+      "macro_f1": 0.9574133447048665,
+      "log_loss": 0.06723027799425026
+    }
+  }
+}
