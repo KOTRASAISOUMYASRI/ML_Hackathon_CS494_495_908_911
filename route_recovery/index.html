@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PathSnap</title>
+<style>body{font:16px system-ui;margin:24px;color:#172d38}button,select{padding:10px;margin:6px}iframe{width:100%;height:72vh;border:1px solid #ddd}</style>
+<h1>PathSnap</h1><p>Development distance-based HMM baseline. Trained classifier integration is pending.</p>
+<label>Partition <select id="partition"><option>student_test</option><option>train</option></select></label>
+<label>Trip <select id="trip"></select></label><button id="run">Reconstruct route</button>
+<p id="status" role="status"></p><iframe title="GPS and reconstructed route" id="map"></iframe>
+<script>
+let inventory={};const partition=document.querySelector('#partition'),trip=document.querySelector('#trip'),status=document.querySelector('#status'),button=document.querySelector('#run');
+function populate(){trip.replaceChildren(...(inventory[partition.value]||[]).map(id=>new Option(id,id)));button.disabled=!trip.options.length;}
+partition.onchange=populate;
+fetch('/trips').then(r=>{if(!r.ok)throw Error('Could not load trips');return r.json()}).then(data=>{inventory=data;populate()}).catch(e=>{status.textContent=e.message;button.disabled=true});
+button.onclick=async()=>{button.disabled=true;const started=Date.now();const timer=setInterval(()=>{status.textContent='Reconstructing route: '+Math.floor((Date.now()-started)/1000)+' seconds. Large trips can take longer; see the API terminal.'},1000);status.textContent='Reconstructing route…';try{const response=await fetch('/map',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({partition:partition.value,trip_id:trip.value})});if(!response.ok){const e=await response.json();throw Error(JSON.stringify(e.detail))}document.querySelector('#map').srcdoc=await response.text();status.textContent='Route response received. Blue: GPS. Green: road sections. Map assets need internet access.';}catch(e){status.textContent='Request failed: '+e.message}finally{clearInterval(timer);button.disabled=false}};
+</script></html>
