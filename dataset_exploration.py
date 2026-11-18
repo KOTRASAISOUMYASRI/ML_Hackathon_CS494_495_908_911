@@ -12,6 +12,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 
 from data_loader import discover_trips, load_trip
+from data_api import create_data_router
 from feature_engineering import build_feature_table
 from preprocessing import clean_track, summarize_track
 from road_network import RoadNetwork
@@ -49,8 +50,11 @@ def build_map(trip, track):
 
 
 def save_eda_plots(track, summary, destination):
+    from collections import Counter
+
     from matplotlib.backends.backend_agg import FigureCanvasAgg
     from matplotlib.figure import Figure
+    from matplotlib.ticker import MaxNLocator
 
     figure = Figure(figsize=(9, 6), layout="constrained")
     FigureCanvasAgg(figure)
@@ -59,10 +63,17 @@ def save_eda_plots(track, summary, destination):
     trajectory.set(xlabel="Longitude", ylabel="Latitude", title="Representative trajectory")
     intervals.hist(track.timestamp.diff().dropna(), bins=20)
     intervals.set(xlabel="Seconds", ylabel="Steps", title="Representative sampling intervals")
-    lengths.hist([row["trajectory_length_m"] for row in summary], bins=20)
-    lengths.set(xlabel="Meters", ylabel="Trips", title="Trajectory lengths by trip")
-    removed.hist([row["removed_observations"] for row in summary], bins=20)
+    lengths.hist([row["trajectory_length_m"] / 1000 for row in summary], bins=20)
+    lengths.set(xlabel="Kilometers", ylabel="Trips", title="Trajectory lengths by trip")
+    lengths.xaxis.set_major_locator(MaxNLocator(nbins=6))
+    counts = Counter(row["removed_observations"] for row in summary)
+    removed.bar(list(counts), list(counts.values()))
     removed.set(xlabel="Removed rows", ylabel="Trips", title="GPS rows removed by trip")
+    if len(counts) <= 6:
+        removed.set_xticks(sorted(counts))
+    else:
+        removed.xaxis.set_major_locator(MaxNLocator(integer=True, nbins=6))
+    removed.yaxis.set_major_locator(MaxNLocator(integer=True, nbins=5))
     figure.savefig(destination / "eda_plots.png", dpi=150)
 
 
@@ -114,11 +125,12 @@ def create_app(partition_dir, *, labeled=False):
     """Serve exploration for a training or student-test partition."""
     trips = discover_trips(partition_dir)
     app = FastAPI(title="PathSnap dataset exploration")
+    app.include_router(create_data_router(partition_dir))
 
     @app.get("/", response_class=HTMLResponse)
     def index():
         links = "".join(
-            f'<li><a href="/trips/{i}">{escape(files.trip_id)}</a></li>'
+            f'<li><a href="trips/{i}">{escape(files.trip_id)}</a></li>'
             for i, files in enumerate(trips)
         )
         return f"<h1>Dataset exploration</h1><p>{len(trips)} trips</p><ul>{links}</ul>"
@@ -135,7 +147,7 @@ def create_app(partition_dir, *, labeled=False):
         title = escape(trip.trip_id)
         map_document = escape(build_map(trip, track).get_root().render(), quote=True)
         return (
-            f'<a href="/">All trips</a><h1>{title}</h1>'
+            f'<a href="../">All trips</a><h1>{title}</h1>'
             f'<iframe title="Trip map" style="width:100%;height:65vh" srcdoc="{map_document}"></iframe>'
             f"<h2>Trip summary</h2><pre>{summary}</pre>"
         )
