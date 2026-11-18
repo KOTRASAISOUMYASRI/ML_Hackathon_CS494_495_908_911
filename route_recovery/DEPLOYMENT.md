@@ -23,6 +23,19 @@ The dataset defaults to the repo's train/student_test folders. For another paren
 powershell -NoProfile -File .\route_recovery\start_api.ps1 -DataRoot 'C:/your/dataset/parent'
 ```
 
+For the authorized evaluation, provide the evaluator input and reference
+directories on Laptop 1. Each directory preserves the trip subfolders and
+file basenames. When the organizers provide all four file types together,
+pass the supplied directory for both parameters:
+
+```powershell
+$evaluator = 'C:/path/to/evaluator_test'
+powershell -NoProfile -File .\route_recovery\start_api.ps1 -EvaluatorInput $evaluator -EvaluatorReference $evaluator
+```
+
+The trip picker shows only evaluator trips and requests server-side scoring
+automatically. The backend reads references after prediction.
+
 The inference environment pins scikit-learn 1.8.0 to match the saved artifacts.
 The selected model is outputs/optimization/hist_gradient_boosting_optimized.joblib.
 A full LFS pull also downloads the 1.16 GB baseline Random Forest and 531 MB
@@ -47,7 +60,7 @@ model downloads:
 
 ```powershell
 $env:GIT_LFS_SKIP_SMUDGE = '1'
-git clone --branch feature/member4-hmm-integration https://github.com/KOTRASAISOUMYASRI/ML_Hackathon_CS494_495_908_911.git
+git clone --branch main https://github.com/KOTRASAISOUMYASRI/ML_Hackathon_CS494_495_908_911.git
 Remove-Item Env:GIT_LFS_SKIP_SMUDGE
 cd ML_Hackathon_CS494_495_908_911
 py -m venv .venv
@@ -76,11 +89,12 @@ powershell -NoProfile -File .\route_recovery\start_api.ps1 -UiOrigins 'http://lo
 1. The selected HGB aggregate panel shows all ten student-test trips: Top-1
    **81.92% alone -> 79.49% with HMM**, a **-2.43 percentage-point** change.
    Continuity rises **85.25% -> 98.27%**. These use derived development labels.
-2. Select student_test trip **00000052/00000052**, keep optimized HGB selected,
-   tick **Reference evaluation**, and click **Reconstruct route**.
-3. Show the current-trip comparison, accuracy change, runtime, map and gaps.
-   Trip 52 improves **94.27% -> 99.62%** Top-1. Explain that this is one trip,
-   whereas the aggregate panel reports the pooled decrease. Show both honestly.
+2. In the authorized evaluator run, confirm the picker lists all ten evaluator
+   trips. Keep optimized HGB selected, let the evaluator choose a trip, and
+   click **Reconstruct route**.
+3. Show the current evaluator-trip comparison, accuracy change, runtime, map
+   and gaps. The saved aggregate panel is from the student-test partition.
+   For rehearsal on development data, use the connection check below.
 4. Toggle blue GPS, purple independent selections, green HMM sections, grey
    roads and orange breaks. No artificial line crosses a break.
 5. Show Laptop 1's incoming POST /visualize, model/trip, match counts and runtime.
@@ -133,5 +147,5 @@ selected-model route reception, errors and the comparison panel. They do not
 prove physical Wi-Fi/firewall behaviour between two laptops. Complete steps
 1-4 on both devices to verify that final physical connection.
 
-Reserved evaluation awaits the actual evaluator input/reference directories.
-No reserved evaluator data was used for these results.
+The reserved evaluation requires the evaluator input and reference directories
+described above. The recorded results use student-test data.
