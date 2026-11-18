@@ -45,7 +45,14 @@ uvicorn route_recovery.main:app --host 0.0.0.0 --port 8000
 Open http://localhost:8000. Laptop 2 can open http://LAPTOP_1_LAN_IP:8000 on
 the same network. Allow port 8000 if the firewall prompts. API logs appear on
 Laptop 1. Folium assets and map tiles need internet access. `/docs` has API docs.
-The development UI is served by Laptop 1; separate Laptop 2 hosting remains.
+For separate Laptop 2 hosting, run
+`python -m uvicorn route_recovery.ui_server:app --port 8080` on Laptop 2 and
+enter Laptop 1's API address in the page. See [deployment steps](DEPLOYMENT.md)
+for allowed origins, network configuration and physical-device verification.
+The UI shows runtime, matched/unmatched counts, road sections, break details
+and map layers. The `/visualize` endpoint returns the results and map together.
+Diagnostic mode reports why transitions failed without changing predictions;
+see [measured findings](../reports/ROUTE_BREAK_FINDINGS.md).
 
 ## Algorithm and integration
 
@@ -74,7 +81,7 @@ engineering starting points, not optimised parameters.
 - Validate reference alignment with the data/evaluation owners; implement
   server-only evaluation and classifier-only versus HMM comparisons.
 - Add reserved evaluator-trip configuration without exposing ground truth.
-- Verify separate UI deployment on two physical laptops.
+- Verify the implemented separate UI deployment on two physical laptops.
 - Record actual dataset metrics, timings, maps and API evidence for the report.
 
 Synthetic tests verify behaviour; they are not experimental dataset results.

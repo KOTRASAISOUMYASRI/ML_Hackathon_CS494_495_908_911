@@ -1,0 +1,3513 @@
+{
+  "created_utc": "2026-11-18T06:35:18.655920+00:00",
+  "scope": "Execution and output-shape checks only; no accuracy claims or reference reads.",
+  "configuration": {
+    "radius_m": 50,
+    "max_candidates": 8,
+    "sigma_m": 20,
+    "beta_m": 30,
+    "max_gap_s": 30,
+    "max_speed_mps": 60
+  },
+  "trips": [
+    {
+      "trip_id": "00000000/00000000",
+      "status": "passed",
+      "observations": 2503,
+      "matched": 2503,
+      "sections": 14,
+      "breaks": {
+        "unreachable_transition": 13
+      },
+      "causes": {
+        "speed_limit": 11,
+        "disconnected_components": 2
+      },
+      "break_details": [
+        {
+          "observation": 1061,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 63.775190124959245,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 2.4387858757535597
+        },
+        {
+          "observation": 1291,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 2608.7918520458597,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 14.255710795216
+        },
+        {
+          "observation": 1880,
+          "reason": "unreachable_transition",
+          "cause": "disconnected_components",
+          "minimum_network_m": null,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 10.432456305996137
+        },
+        {
+          "observation": 1886,
+          "reason": "unreachable_transition",
+          "cause": "disconnected_components",
+          "minimum_network_m": null,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 6,
+          "candidate_count": 8,
+          "nearest_candidate_m": 16.286543721773086
+        },
+        {
+          "observation": 2099,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 208.05396633496528,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 3,
+          "candidate_count": 4,
+          "nearest_candidate_m": 21.48923039247016
+        },
+        {
+          "observation": 2171,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 435.3445430188685,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 8,
+          "nearest_candidate_m": 0.8421485518340549
+        },
+        {
+          "observation": 2186,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 137.39045145488114,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 1.5178288896180272
+        },
+        {
+          "observation": 2199,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 84.29451245079638,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 9.08247656531908
+        },
+        {
+          "observation": 2259,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 696.1690120291004,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 11.84917456513462
+        },
+        {
+          "observation": 2346,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 133.42560028350144,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 6,
+          "nearest_candidate_m": 1.9396874248426383
+        },
+        {
+          "observation": 2348,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 115.58898584022782,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 2.0118032384063897
+        },
+        {
+          "observation": 2359,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 73.8752751989054,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 8,
+          "nearest_candidate_m": 7.361901807155969
+        },
+        {
+          "observation": 2371,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 296.79893907539605,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 1.961937467682332
+        }
+      ],
+      "fallback_observations": 0,
+      "seconds": 3.6465
+    },
+    {
+      "trip_id": "00000007/00000007",
+      "status": "passed",
+      "observations": 1354,
+      "matched": 1354,
+      "sections": 85,
+      "breaks": {
+        "unreachable_transition": 84
+      },
+      "causes": {
+        "speed_limit": 84
+      },
+      "break_details": [
+        {
+          "observation": 310,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 161.666171903114,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 12.567996720801217
+        },
+        {
+          "observation": 473,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 818.2724544323685,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 0.406707740194573
+        },
+        {
+          "observation": 665,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 109.39200598887732,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 20.411554069237408
+        },
+        {
+          "observation": 1161,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 100.34841950240002,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 3,
+          "candidate_count": 2,
+          "nearest_candidate_m": 9.487225220887902
+        },
+        {
+          "observation": 1163,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 101.67494662524908,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 12.088840424296649
+        },
+        {
+          "observation": 1165,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 98.80278462195045,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 17.52069586623068
+        },
+        {
+          "observation": 1168,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 361.249559392014,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 10.791751287706859
+        },
+        {
+          "observation": 1170,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 111.12869547666749,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 23.149570865459612
+        },
+        {
+          "observation": 1173,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 352.5476886097079,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 21.015899009007136
+        },
+        {
+          "observation": 1176,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 97.52488803103338,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 21.93152946773293
+        },
+        {
+          "observation": 1178,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 375.40592994327585,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 15.669177150025902
+        },
+        {
+          "observation": 1180,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 99.10472374745791,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 3,
+          "candidate_count": 2,
+          "nearest_candidate_m": 9.858177313304811
+        },
+        {
+          "observation": 1183,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 369.2303469350767,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 12.86675319239999
+        },
+        {
+          "observation": 1187,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 365.4997956296899,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 14.63482340874296
+        },
+        {
+          "observation": 1189,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 103.25578229567493,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 16.792324357007757
+        },
+        {
+          "observation": 1191,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 105.80550219886544,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 8.80933935937789
+        },
+        {
+          "observation": 1193,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 365.7809320902138,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 18.10084803793106
+        },
+        {
+          "observation": 1196,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 368.54052516418744,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 16.20188519988157
+        },
+        {
+          "observation": 1198,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 370.7601799171855,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 16.595511208478154
+        },
+        {
+          "observation": 1200,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 112.3305924123872,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 17.972259980511726
+        },
+        {
+          "observation": 1203,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 104.76765238723964,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 25.757275532794733
+        },
+        {
+          "observation": 1205,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 374.61758765227637,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 31.575293717472555
+        },
+        {
+          "observation": 1207,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 363.8964501597234,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 32.684177684482215
+        },
+        {
+          "observation": 1209,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 372.7045405623613,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 24.110756408943306
+        },
+        {
+          "observation": 1211,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 374.0336670808174,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 19.57417168616227
+        },
+        {
+          "observation": 1213,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 91.46128408544803,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 3,
+          "candidate_count": 2,
+          "nearest_candidate_m": 28.79460951765038
+        },
+        {
+          "observation": 1215,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 89.81995050183399,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 27.23458353983377
+        },
+        {
+          "observation": 1217,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 377.66988119503475,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 34.23254001621613
+        },
+        {
+          "observation": 1220,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 373.34337479152197,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 29.994909983510333
+        },
+        {
+          "observation": 1222,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 374.1496864379501,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 24.010722598931164
+        },
+        {
+          "observation": 1224,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 96.1115506374908,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 23.838681000539268
+        },
+        {
+          "observation": 1227,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 364.7692335305395,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 26.371334413819504
+        },
+        {
+          "observation": 1229,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 105.4968892096033,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 34.22153677803899
+        },
+        {
+          "observation": 1231,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 104.92595822906242,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 32.73162597162295
+        },
+        {
+          "observation": 1233,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 350.2767910092308,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 22.481036025227972
+        },
+        {
+          "observation": 1235,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 111.71118922485273,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 24.68692688349812
+        },
+        {
+          "observation": 1240,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 101.61050989166999,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 12.038351291228487
+        },
+        {
+          "observation": 1242,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 103.46664145383443,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 25.266868414241888
+        },
+        {
+          "observation": 1244,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 116.47926220525059,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 19.975250619816954
+        },
+        {
+          "observation": 1248,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 116.06603358675677,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 36.170997922650066
+        },
+        {
+          "observation": 1251,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 103.12846159581814,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 20.8920361212796
+        },
+        {
+          "observation": 1253,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 378.1337242059908,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 23.650055491043133
+        },
+        {
+          "observation": 1255,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 368.3795893387295,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 19.73592658835441
+        },
+        {
+          "observation": 1257,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 369.66273312376995,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 22.37774489371196
+        },
+        {
+          "observation": 1259,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 107.0297065915249,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 18.721203763859286
+        },
+        {
+          "observation": 1262,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 107.19826464338186,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 21.391785840627534
+        },
+        {
+          "observation": 1264,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 102.36443694587902,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 29.076973328751205
+        },
+        {
+          "observation": 1266,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 108.24257792649178,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 26.643411746761686
+        },
+        {
+          "observation": 1268,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 114.1535947260573,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 26.012982011440194
+        },
+        {
+          "observation": 1271,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 105.4038644107635,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 22.528268407165815
+        },
+        {
+          "observation": 1273,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 371.468211877998,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 21.494655659230688
+        },
+        {
+          "observation": 1276,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 368.00770631691034,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 17.07982880922893
+        },
+        {
+          "observation": 1278,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 109.45579526326819,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 25.155603169956386
+        },
+        {
+          "observation": 1281,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 110.48402523320476,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 33.404582596166556
+        },
+        {
+          "observation": 1284,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 110.42196597315916,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 29.578825681070267
+        },
+        {
+          "observation": 1286,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 106.08652803639166,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 32.193771834446345
+        },
+        {
+          "observation": 1288,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 367.61639665182236,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 18.807697713040156
+        },
+        {
+          "observation": 1291,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 361.3519546586125,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 31.61477439097459
+        },
+        {
+          "observation": 1295,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 103.69784595171998,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 18.67166060420536
+        },
+        {
+          "observation": 1298,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 100.20207451370145,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 33.803130613831264
+        },
+        {
+          "observation": 1300,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 98.02113546333287,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 18.48303628415555
+        },
+        {
+          "observation": 1302,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 101.48057014512065,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 17.678457950564315
+        },
+        {
+          "observation": 1304,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 100.91725116957456,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 3,
+          "candidate_count": 2,
+          "nearest_candidate_m": 16.893302802533434
+        },
+        {
+          "observation": 1306,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 87.10118481309499,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 3,
+          "candidate_count": 2,
+          "nearest_candidate_m": 23.601665091017384
+        },
+        {
+          "observation": 1309,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 92.51881694918737,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 3,
+          "candidate_count": 2,
+          "nearest_candidate_m": 23.909744078670574
+        },
+        {
+          "observation": 1311,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 93.73620769626018,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 20.626051938381572
+        },
+        {
+          "observation": 1313,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 85.09189717955246,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 3,
+          "candidate_count": 2,
+          "nearest_candidate_m": 19.59055007968683
+        },
+        {
+          "observation": 1315,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 384.07761876938196,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 6,
+          "nearest_candidate_m": 18.68688951158198
+        },
+        {
+          "observation": 1318,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 382.2855967235338,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 6,
+          "nearest_candidate_m": 25.218059614445803
+        },
+        {
+          "observation": 1320,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 372.80317115410287,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 30.862357313397542
+        },
+        {
+          "observation": 1323,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 374.8684485722722,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 23.51212742650273
+        },
+        {
+          "observation": 1325,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 365.2649944382314,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 25.545031527446874
+        },
+        {
+          "observation": 1327,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 103.82697027451795,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 24.53220081806429
+        },
+        {
+          "observation": 1329,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 97.79575960627871,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 27.562292137345175
+        },
+        {
+          "observation": 1331,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 371.6683312602105,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 19.184741828810097
+        },
+        {
+          "observation": 1333,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 370.84331472528334,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 20.908412719850507
+        },
+        {
+          "observation": 1335,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 365.2565448634351,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 20.00705520307858
+        },
+        {
+          "observation": 1338,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 100.32236180399269,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 3,
+          "candidate_count": 2,
+          "nearest_candidate_m": 20.587210656767887
+        },
+        {
+          "observation": 1340,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 361.41580570690485,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 18.60269575418283
+        },
+        {
+          "observation": 1343,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 363.1442104995088,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 20.49536420768833
+        },
+        {
+          "observation": 1347,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 360.26523479417955,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 22.323267329634998
+        },
+        {
+          "observation": 1349,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 352.1874512826069,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 26.15300484349925
+        },
+        {
+          "observation": 1351,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 115.05698888319978,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 22.615917174923723
+        },
+        {
+          "observation": 1353,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 100.90535543406116,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 27.721003476283304
+        }
+      ],
+      "fallback_observations": 0,
+      "seconds": 1.2847
+    },
+    {
+      "trip_id": "00000009/00000009",
+      "status": "passed",
+      "observations": 1049,
+      "matched": 1049,
+      "sections": 7,
+      "breaks": {
+        "unreachable_transition": 6
+      },
+      "causes": {
+        "speed_limit": 6
+      },
+      "break_details": [
+        {
+          "observation": 18,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 73.4664040905655,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 8.457470838713926
+        },
+        {
+          "observation": 56,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 161.64328196477217,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 4.95533841234828
+        },
+        {
+          "observation": 132,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 170.57798573821728,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 2.49776694634489
+        },
+        {
+          "observation": 518,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 156.8041681795341,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 4,
+          "candidate_count": 8,
+          "nearest_candidate_m": 7.224776293006597
+        },
+        {
+          "observation": 519,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 125.34625191423731,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 8,
+          "candidate_count": 8,
+          "nearest_candidate_m": 4.758803217338261
+        },
+        {
+          "observation": 792,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 63.012923347175416,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 2.718149790197651
+        }
+      ],
+      "fallback_observations": 0,
+      "seconds": 1.6964
+    },
+    {
+      "trip_id": "00000040/00000040",
+      "status": "passed",
+      "observations": 2995,
+      "matched": 2995,
+      "sections": 98,
+      "breaks": {
+        "unreachable_transition": 97
+      },
+      "causes": {
+        "speed_limit": 97
+      },
+      "break_details": [
+        {
+          "observation": 2,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 109.33715589162499,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 38.78303088434699
+        },
+        {
+          "observation": 6,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 95.09594304417402,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 37.49878346554757
+        },
+        {
+          "observation": 9,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 70.43377195289446,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 37.08638549603143
+        },
+        {
+          "observation": 13,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 97.49376313118783,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 34.33499288166788
+        },
+        {
+          "observation": 15,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 95.3967663517546,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 23.56800469998451
+        },
+        {
+          "observation": 17,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 95.09142606326847,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 32.66357925170994
+        },
+        {
+          "observation": 19,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 95.26692507234614,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 32.415315688878636
+        },
+        {
+          "observation": 21,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 84.2198853981815,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 34.431191021625125
+        },
+        {
+          "observation": 23,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 89.88782450330876,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 2,
+          "nearest_candidate_m": 34.07529458229767
+        },
+        {
+          "observation": 25,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 94.40004389432903,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 33.915896182561596
+        },
+        {
+          "observation": 27,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 89.88079809228846,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 40.769772071838425
+        },
+        {
+          "observation": 30,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 94.42131056018073,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 23.247892090646804
+        },
+        {
+          "observation": 32,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 99.13452087379122,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 37.37884076446833
+        },
+        {
+          "observation": 34,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 83.15752575150339,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 28.965726684587008
+        },
+        {
+          "observation": 36,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 96.19395617277833,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 27.19209126194848
+        },
+        {
+          "observation": 38,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 107.65280000197558,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 38.14177456194988
+        },
+        {
+          "observation": 40,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 101.97352076732386,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 26.08817401513084
+        },
+        {
+          "observation": 42,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 87.16686146509866,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 32.5568175076698
+        },
+        {
+          "observation": 44,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 105.32394961871347,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 42.29905084324983
+        },
+        {
+          "observation": 50,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 82.40164777311546,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 2,
+          "nearest_candidate_m": 33.25542976727782
+        },
+        {
+          "observation": 52,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 106.1655587307015,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 23.658780765761794
+        },
+        {
+          "observation": 54,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 101.34737814276801,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 33.18489578605281
+        },
+        {
+          "observation": 56,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 96.73764639543245,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 32.181717443529806
+        },
+        {
+          "observation": 60,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 94.66557217265927,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 33.418494800377005
+        },
+        {
+          "observation": 62,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 86.18654715934392,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 26.340103786212932
+        },
+        {
+          "observation": 65,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 75.32594748310302,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 9.916145165550057
+        },
+        {
+          "observation": 67,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 73.93808939194615,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 11.65852256946268
+        },
+        {
+          "observation": 69,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 72.45731250709579,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 13.036801474403164
+        },
+        {
+          "observation": 73,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 144.28304918390708,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 12.514380395506985
+        },
+        {
+          "observation": 75,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 132.19798879885604,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 17.41472177774258
+        },
+        {
+          "observation": 78,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 133.61220748194398,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 13.791080213868806
+        },
+        {
+          "observation": 80,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 138.69626250322705,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 6.633952356096257
+        },
+        {
+          "observation": 82,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 142.19396725698596,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 14.506959219147532
+        },
+        {
+          "observation": 85,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 115.66381682282771,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 4.500534605600898
+        },
+        {
+          "observation": 112,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 150.68283650462035,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 6,
+          "nearest_candidate_m": 1.7993528456233638
+        },
+        {
+          "observation": 211,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 160.25575849024546,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 1.9861813342365575
+        },
+        {
+          "observation": 233,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 250.85201936768095,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 9.692527235921059
+        },
+        {
+          "observation": 246,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 106.68708151599492,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 0.040824327243654215
+        },
+        {
+          "observation": 285,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 107.02327313334251,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 9.29305421649317
+        },
+        {
+          "observation": 300,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 153.92809037421773,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 0.04229031941006254
+        },
+        {
+          "observation": 318,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 274.8841064876259,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 2.220939072293255
+        },
+        {
+          "observation": 333,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 127.8581638359119,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 7.0371795206046555
+        },
+        {
+          "observation": 336,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 97.96722350193883,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 2,
+          "nearest_candidate_m": 8.758444150935421
+        },
+        {
+          "observation": 349,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 162.06247301480562,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 11.429690738762904
+        },
+        {
+          "observation": 380,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 457.68142017791524,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 8.43021257783757
+        },
+        {
+          "observation": 387,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 366.9917400439507,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 12.331638469906304
+        },
+        {
+          "observation": 391,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 309.3974222951963,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 13.687086967852274
+        },
+        {
+          "observation": 397,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 236.35357331742355,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 10.006801945092507
+        },
+        {
+          "observation": 403,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 156.60685883376453,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 2.7327753841079128
+        },
+        {
+          "observation": 416,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 816.7044183160132,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 13.944373842480505
+        },
+        {
+          "observation": 423,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 707.9959031387991,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 14.263128835253548
+        },
+        {
+          "observation": 428,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 631.1728588357876,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 5.3788417768248316
+        },
+        {
+          "observation": 433,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 580.0846041783409,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 4.541960499568437
+        },
+        {
+          "observation": 437,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 527.9537708161981,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 2.574360745998444
+        },
+        {
+          "observation": 441,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 494.00141029597944,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 3.3261782971816287
+        },
+        {
+          "observation": 447,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 409.42385170937973,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 5.239840597123958
+        },
+        {
+          "observation": 457,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 283.75603090573304,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 0.6840876226898674
+        },
+        {
+          "observation": 459,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 251.79636583301902,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 7.2469771775639185
+        },
+        {
+          "observation": 493,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 211.71188834176638,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 2.6305435356257165
+        },
+        {
+          "observation": 502,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 100.33408731203392,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 3.455861072982285
+        },
+        {
+          "observation": 519,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 368.2109200286093,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 4.486789430024722
+        },
+        {
+          "observation": 529,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 240.76140679243287,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 4.772101476379549
+        },
+        {
+          "observation": 535,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 184.82666127861057,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 13.829015761698638
+        },
+        {
+          "observation": 538,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 125.75216271888758,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 14.26859982785625
+        },
+        {
+          "observation": 541,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 80.63907007751277,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 6,
+          "nearest_candidate_m": 8.939796893322765
+        },
+        {
+          "observation": 582,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 282.52098278086135,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 9.397592552658265
+        },
+        {
+          "observation": 587,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 231.2620186180992,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 0.8721209705145361
+        },
+        {
+          "observation": 597,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 133.7805497558203,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 6.556057815113699
+        },
+        {
+          "observation": 615,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 1213.2144652985116,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 7.797261839372382
+        },
+        {
+          "observation": 627,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 1033.350182782127,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 1.6016059220291954
+        },
+        {
+          "observation": 632,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 966.1528884532972,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 3.236671075806726
+        },
+        {
+          "observation": 639,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 864.6368837558657,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 3.073276960315055
+        },
+        {
+          "observation": 642,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 832.0816462177318,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 8.176166546681406
+        },
+        {
+          "observation": 645,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 803.3313398157735,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 4.059416584342409
+        },
+        {
+          "observation": 647,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 792.2566832098126,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 3.0016711647044994
+        },
+        {
+          "observation": 651,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 748.4260821528412,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 7.933261265148714
+        },
+        {
+          "observation": 653,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 722.9575087081,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 3.0446341681555715
+        },
+        {
+          "observation": 672,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 514.5948551361148,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 6.140379886026412
+        },
+        {
+          "observation": 674,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 506.25531403824607,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 0.29147855155634195
+        },
+        {
+          "observation": 676,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 497.283161841568,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 1.3679956596803982
+        },
+        {
+          "observation": 679,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 461.56587407550967,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 7.4839396032332655
+        },
+        {
+          "observation": 689,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 341.7469063758136,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 6.680462071529122
+        },
+        {
+          "observation": 699,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 208.18302055121782,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 12.989577880249305
+        },
+        {
+          "observation": 705,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 161.92226296780723,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 6.548833101979412
+        },
+        {
+          "observation": 709,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 112.30449765420451,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 6.756619499362724
+        },
+        {
+          "observation": 722,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 173.24564033560603,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 9.626886120161107
+        },
+        {
+          "observation": 932,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 2517.6988008372564,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 18.907320984976256
+        },
+        {
+          "observation": 1209,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 142.3880734252725,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 5.924301396095986
+        },
+        {
+          "observation": 2076,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 884.0654575137727,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 2.4102455782966037
+        },
+        {
+          "observation": 2077,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 72.98687325369548,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 2,
+          "nearest_candidate_m": 2.3393265595724517
+        },
+        {
+          "observation": 2715,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 159.4617719632874,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 9.345059672962371
+        },
+        {
+          "observation": 2718,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 164.4023102503058,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 11.407160728588984
+        },
+        {
+          "observation": 2720,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 167.50389876058102,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 3,
+          "nearest_candidate_m": 13.843694886172127
+        },
+        {
+          "observation": 2722,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 122.14837705065277,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 5,
+          "nearest_candidate_m": 9.166305386747434
+        },
+        {
+          "observation": 2726,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 1608.0134905886603,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 5,
+          "nearest_candidate_m": 4.46230336280308
+        },
+        {
+          "observation": 2732,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 234.73981612089045,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 4,
+          "candidate_count": 8,
+          "nearest_candidate_m": 6.414880339590377
+        },
+        {
+          "observation": 2766,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 117.81222824292125,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 5.168979270183629
+        }
+      ],
+      "fallback_observations": 0,
+      "seconds": 3.3269
+    },
+    {
+      "trip_id": "00000052/00000052",
+      "status": "passed",
+      "observations": 262,
+      "matched": 262,
+      "sections": 1,
+      "breaks": {},
+      "causes": {},
+      "break_details": [],
+      "fallback_observations": 0,
+      "seconds": 0.3631
+    },
+    {
+      "trip_id": "00000056/00000056",
+      "status": "passed",
+      "observations": 3958,
+      "matched": 3958,
+      "sections": 23,
+      "breaks": {
+        "unreachable_transition": 22
+      },
+      "causes": {
+        "speed_limit": 21,
+        "road_direction": 1
+      },
+      "break_details": [
+        {
+          "observation": 88,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 529.7069476079259,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 5,
+          "nearest_candidate_m": 6.575874960824499
+        },
+        {
+          "observation": 152,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 726.3638500239512,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 0.4859670783700463
+        },
+        {
+          "observation": 170,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 861.6818428359032,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 3.843025618617657
+        },
+        {
+          "observation": 183,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 74.56224826067917,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 5.627048937332157
+        },
+        {
+          "observation": 196,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 878.4613204214603,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 6.290313438668373
+        },
+        {
+          "observation": 215,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 932.4877717369665,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 3.535896895901102
+        },
+        {
+          "observation": 407,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 97.84488342269246,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 3,
+          "candidate_count": 8,
+          "nearest_candidate_m": 2.8035414827963616
+        },
+        {
+          "observation": 410,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 81.63727555288276,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 8,
+          "candidate_count": 8,
+          "nearest_candidate_m": 0.5422780194870889
+        },
+        {
+          "observation": 1176,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 101.90028249258097,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 2.0815506649748055
+        },
+        {
+          "observation": 1193,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 597.5410746181155,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 8,
+          "nearest_candidate_m": 4.461164924007736
+        },
+        {
+          "observation": 1305,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 137.03750296771,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 5.500203212549818
+        },
+        {
+          "observation": 2347,
+          "reason": "unreachable_transition",
+          "cause": "road_direction",
+          "minimum_network_m": null,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 3.391279116974433
+        },
+        {
+          "observation": 3187,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 123.29619547596612,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 7,
+          "candidate_count": 8,
+          "nearest_candidate_m": 11.926790575076465
+        },
+        {
+          "observation": 3260,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 166.47093938809118,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 10.988783485470424
+        },
+        {
+          "observation": 3529,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 570.895936827292,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 7.1027147860731885
+        },
+        {
+          "observation": 3532,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 548.9847519875696,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 15.117087839810793
+        },
+        {
+          "observation": 3535,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 539.6034870005525,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 23.306402670735242
+        },
+        {
+          "observation": 3654,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 593.4373691135015,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 1.368456229548107
+        },
+        {
+          "observation": 3695,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 264.1850749740481,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 6.745825572576788
+        },
+        {
+          "observation": 3718,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 147.6337741911896,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 8,
+          "nearest_candidate_m": 0.21352803431197206
+        },
+        {
+          "observation": 3789,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 130.54402590770553,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 5,
+          "candidate_count": 8,
+          "nearest_candidate_m": 11.713510187566568
+        },
+        {
+          "observation": 3790,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 102.64184291435645,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 8,
+          "candidate_count": 8,
+          "nearest_candidate_m": 4.398115149309662
+        }
+      ],
+      "fallback_observations": 0,
+      "seconds": 5.2439
+    },
+    {
+      "trip_id": "00000065/00000065",
+      "status": "passed",
+      "observations": 768,
+      "matched": 768,
+      "sections": 15,
+      "breaks": {
+        "timestamp_gap": 1,
+        "unreachable_transition": 13
+      },
+      "causes": {
+        "timestamp_gap": 1,
+        "speed_limit": 13
+      },
+      "break_details": [
+        {
+          "observation": 115,
+          "reason": "timestamp_gap"
+        },
+        {
+          "observation": 149,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 517.7854251822664,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 5.571399715222065
+        },
+        {
+          "observation": 267,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 1971.810291161104,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 8,
+          "nearest_candidate_m": 4.207945796673792
+        },
+        {
+          "observation": 271,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 1026.4039929533242,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 1.176956925999155
+        },
+        {
+          "observation": 607,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 269.8372720573274,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 5.014194186483046
+        },
+        {
+          "observation": 671,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 142.46233379997926,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 2.466359965729591
+        },
+        {
+          "observation": 688,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 121.31459723261953,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 1.8698884133579177
+        },
+        {
+          "observation": 692,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 116.95304332634706,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 0.11737232802161547
+        },
+        {
+          "observation": 709,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 178.4768472722922,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 2.798807336178448
+        },
+        {
+          "observation": 746,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 119.20427328202801,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 8,
+          "nearest_candidate_m": 1.7912868111987088
+        },
+        {
+          "observation": 759,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 650.9288596937125,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 6,
+          "nearest_candidate_m": 4.861235727213843
+        },
+        {
+          "observation": 763,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 594.7371130448258,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 6.509295687352885
+        },
+        {
+          "observation": 765,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 130.00676973073092,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 10.844720354696548
+        },
+        {
+          "observation": 767,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 141.46009050194192,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 3.752233049068111
+        }
+      ],
+      "fallback_observations": 0,
+      "seconds": 1.2765
+    },
+    {
+      "trip_id": "00000076/00000076",
+      "status": "passed",
+      "observations": 1486,
+      "matched": 1486,
+      "sections": 6,
+      "breaks": {
+        "unreachable_transition": 4,
+        "timestamp_gap": 1
+      },
+      "causes": {
+        "speed_limit": 4,
+        "timestamp_gap": 1
+      },
+      "break_details": [
+        {
+          "observation": 27,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 536.0532175876656,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 0.9699397802088305
+        },
+        {
+          "observation": 222,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 285.47494598699774,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 1.62227385542961
+        },
+        {
+          "observation": 482,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 105.73916714114708,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 3.493927177135139
+        },
+        {
+          "observation": 683,
+          "reason": "timestamp_gap"
+        },
+        {
+          "observation": 935,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 167.81957444045804,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 2.61222557664648
+        }
+      ],
+      "fallback_observations": 0,
+      "seconds": 2.9199
+    },
+    {
+      "trip_id": "00000077/00000077",
+      "status": "passed",
+      "observations": 3911,
+      "matched": 3911,
+      "sections": 86,
+      "breaks": {
+        "unreachable_transition": 85
+      },
+      "causes": {
+        "speed_limit": 85
+      },
+      "break_details": [
+        {
+          "observation": 76,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 215.64113997791037,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 6,
+          "nearest_candidate_m": 0.7322005207325765
+        },
+        {
+          "observation": 88,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 265.6345463876848,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 1.1447659299777055
+        },
+        {
+          "observation": 92,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 291.44346805260113,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 6.943540943468238
+        },
+        {
+          "observation": 94,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 286.5859548431424,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 4.406621749067739
+        },
+        {
+          "observation": 99,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 238.2083588793156,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 2.8043936593394534
+        },
+        {
+          "observation": 101,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 216.75184723455033,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 12.356621393109215
+        },
+        {
+          "observation": 103,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 210.68779351580588,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 0.10560165293815116
+        },
+        {
+          "observation": 107,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 221.94232612185013,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 2.653887808389192
+        },
+        {
+          "observation": 110,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 208.31344908983246,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 1.4206114885733971
+        },
+        {
+          "observation": 114,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 189.5473256256795,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 5.972579231410215
+        },
+        {
+          "observation": 120,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 151.62471224611738,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 4.192244515633421
+        },
+        {
+          "observation": 122,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 158.17535009265137,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 5.835012040667548
+        },
+        {
+          "observation": 126,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 130.9153528970817,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 8.072565334870957
+        },
+        {
+          "observation": 128,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 317.68501513850754,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 0.6996728479630532
+        },
+        {
+          "observation": 130,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 112.46234144465231,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 5.069630183439854
+        },
+        {
+          "observation": 132,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 338.4127586134656,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 8.71127379005969
+        },
+        {
+          "observation": 134,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 344.19429046452757,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 2.480067890195165
+        },
+        {
+          "observation": 136,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 103.51310315285937,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 2,
+          "nearest_candidate_m": 7.533811300728905
+        },
+        {
+          "observation": 138,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 87.95334376976426,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 2,
+          "nearest_candidate_m": 0.42457698576767505
+        },
+        {
+          "observation": 154,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 276.87763458483187,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 7.692009508532807
+        },
+        {
+          "observation": 168,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 128.5197380821468,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 6.489401067130095
+        },
+        {
+          "observation": 181,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 101.82743558450795,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 6,
+          "nearest_candidate_m": 0.16541417960746363
+        },
+        {
+          "observation": 186,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 232.41377996814848,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 6,
+          "nearest_candidate_m": 4.280938170275538
+        },
+        {
+          "observation": 196,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 223.50541096184006,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 6,
+          "nearest_candidate_m": 2.105622253328727
+        },
+        {
+          "observation": 201,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 98.16276408236763,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 6,
+          "nearest_candidate_m": 3.350534581410342
+        },
+        {
+          "observation": 389,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 90.23875995713954,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 3,
+          "candidate_count": 4,
+          "nearest_candidate_m": 6.295948660163669
+        },
+        {
+          "observation": 400,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 108.72948373021798,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 10.574671681209487
+        },
+        {
+          "observation": 402,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 108.31190393970475,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 2.479199370181672
+        },
+        {
+          "observation": 406,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 92.31029301807494,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 4,
+          "nearest_candidate_m": 11.206642517140477
+        },
+        {
+          "observation": 409,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 107.41054939286244,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 6.158828723339976
+        },
+        {
+          "observation": 416,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 106.40069595986827,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 9.857358540982357
+        },
+        {
+          "observation": 543,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 129.49863332832828,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 7.469963008898928
+        },
+        {
+          "observation": 705,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 82.50130319666042,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 10.286777698596314
+        },
+        {
+          "observation": 1058,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 71.43625346110102,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 0.28565106409562274
+        },
+        {
+          "observation": 1099,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 159.51904376548603,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 0.5040389703501952
+        },
+        {
+          "observation": 1148,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 261.2088504812994,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 0.06588145612410773
+        },
+        {
+          "observation": 1514,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 175.68080475843482,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 8,
+          "nearest_candidate_m": 5.241098858653949
+        },
+        {
+          "observation": 1668,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 125.33429958515576,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 7.579417785711623
+        },
+        {
+          "observation": 1671,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 95.66968345961246,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 3,
+          "candidate_count": 8,
+          "nearest_candidate_m": 7.3790791380016065
+        },
+        {
+          "observation": 1676,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 127.6501817908413,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 8.245934955587451
+        },
+        {
+          "observation": 1682,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 87.27765019534263,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 3,
+          "candidate_count": 8,
+          "nearest_candidate_m": 6.187198430766484
+        },
+        {
+          "observation": 1714,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 244.96223252606723,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 4.579842438390304
+        },
+        {
+          "observation": 1724,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 230.20808778958698,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 0.04127514986943511
+        },
+        {
+          "observation": 1735,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 227.68372382750476,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 4,
+          "nearest_candidate_m": 9.415345103941554
+        },
+        {
+          "observation": 1792,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 212.07063662608124,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 5.7047966810660435
+        },
+        {
+          "observation": 1892,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 133.02075437618504,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 6.013447856154071
+        },
+        {
+          "observation": 1945,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 96.61462654219712,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 8.919317965406046
+        },
+        {
+          "observation": 1985,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 186.94528518618182,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 11.127216922517086
+        },
+        {
+          "observation": 2005,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 205.80541795129272,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 4,
+          "candidate_count": 8,
+          "nearest_candidate_m": 10.034440225430354
+        },
+        {
+          "observation": 2050,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 277.9152460591482,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 8,
+          "nearest_candidate_m": 6.7901027920953965
+        },
+        {
+          "observation": 2058,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 185.78621352048611,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 6,
+          "nearest_candidate_m": 0.8682722400686558
+        },
+        {
+          "observation": 2557,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 66.57558173730729,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 3.9428119115139117
+        },
+        {
+          "observation": 2564,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 70.95400242706269,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 0.7968332432282051
+        },
+        {
+          "observation": 2689,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 242.7201833335712,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 3.9002225529907975
+        },
+        {
+          "observation": 2692,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 211.37951714628517,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 4,
+          "nearest_candidate_m": 2.190406759358323
+        },
+        {
+          "observation": 2696,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 167.12662476095937,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 4,
+          "nearest_candidate_m": 4.680072689143326
+        },
+        {
+          "observation": 2698,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 137.14723333156553,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 6,
+          "nearest_candidate_m": 8.509365336217751
+        },
+        {
+          "observation": 2979,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 154.34850317365817,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 0.09548928296143379
+        },
+        {
+          "observation": 3036,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 353.1318747493249,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 3.4457441529501183
+        },
+        {
+          "observation": 3041,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 185.75602252340337,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 0.3897557694527914
+        },
+        {
+          "observation": 3089,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 105.68976714799432,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 0.7158501260595858
+        },
+        {
+          "observation": 3139,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 150.39112823761852,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 1.278159668195434
+        },
+        {
+          "observation": 3261,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 120.7623921566514,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 8,
+          "nearest_candidate_m": 5.460299936391123
+        },
+        {
+          "observation": 3356,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 120.19961073964548,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 0.28420086843901277
+        },
+        {
+          "observation": 3409,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 492.3472553558573,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 5,
+          "nearest_candidate_m": 5.40631175683915
+        },
+        {
+          "observation": 3418,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 392.6294138304399,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 4.047471695742449
+        },
+        {
+          "observation": 3561,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 209.11264728133006,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 6,
+          "nearest_candidate_m": 7.421763006473971
+        },
+        {
+          "observation": 3566,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 121.97370435354263,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 3,
+          "candidate_count": 6,
+          "nearest_candidate_m": 2.480641803677997
+        },
+        {
+          "observation": 3568,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 98.61187562125244,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 3,
+          "candidate_count": 6,
+          "nearest_candidate_m": 5.640785371905072
+        },
+        {
+          "observation": 3570,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 81.02344664166117,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 3,
+          "candidate_count": 6,
+          "nearest_candidate_m": 6.037536239861978
+        },
+        {
+          "observation": 3593,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 90.2295698555032,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 8,
+          "nearest_candidate_m": 3.0780368598857217
+        },
+        {
+          "observation": 3614,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 248.9745437183241,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 23.50244319766772
+        },
+        {
+          "observation": 3617,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 223.8246204375572,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 4,
+          "nearest_candidate_m": 2.0653353288351832
+        },
+        {
+          "observation": 3620,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 220.63189146867077,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 6.573822364209167
+        },
+        {
+          "observation": 3622,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 212.0987275974075,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 11.691279137427859
+        },
+        {
+          "observation": 3624,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 208.39003251547496,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 13.04694329958357
+        },
+        {
+          "observation": 3627,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 192.43241379950064,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 10.667167336154748
+        },
+        {
+          "observation": 3630,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 182.38065307531224,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 12.98882388139609
+        },
+        {
+          "observation": 3632,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 180.95916275192647,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 8.85356276287444
+        },
+        {
+          "observation": 3634,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 191.91320047551372,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 2.8653305709102264
+        },
+        {
+          "observation": 3638,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 175.95232420770523,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 12.903884920799394
+        },
+        {
+          "observation": 3645,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 117.70758174563835,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 8.03385718452011
+        },
+        {
+          "observation": 3737,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 288.22292782009345,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 7.766924936006974
+        },
+        {
+          "observation": 3846,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 194.1148014276515,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 3,
+          "candidate_count": 8,
+          "nearest_candidate_m": 16.163567289012384
+        },
+        {
+          "observation": 3848,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 105.57481532272541,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 1.185626298088364
+        }
+      ],
+      "fallback_observations": 0,
+      "seconds": 4.7913
+    },
+    {
+      "trip_id": "00000091/00000091",
+      "status": "passed",
+      "observations": 874,
+      "matched": 874,
+      "sections": 9,
+      "breaks": {
+        "unreachable_transition": 8
+      },
+      "causes": {
+        "speed_limit": 8
+      },
+      "break_details": [
+        {
+          "observation": 97,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 71.53426375396234,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 4,
+          "candidate_count": 8,
+          "nearest_candidate_m": 4.496247437858353
+        },
+        {
+          "observation": 103,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 80.81179635155404,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 8,
+          "nearest_candidate_m": 6.79264373324471
+        },
+        {
+          "observation": 109,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 107.02480179898672,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 3.4888330998219566
+        },
+        {
+          "observation": 114,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 68.56965567468765,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 2,
+          "candidate_count": 8,
+          "nearest_candidate_m": 1.3908619329552887
+        },
+        {
+          "observation": 129,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 72.58808766914123,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 1.5649704156644364
+        },
+        {
+          "observation": 215,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 89.21504344178925,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 2.8554571802056254
+        },
+        {
+          "observation": 227,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 245.43099207363764,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 8,
+          "nearest_candidate_m": 2.9258004906489194
+        },
+        {
+          "observation": 349,
+          "reason": "unreachable_transition",
+          "cause": "speed_limit",
+          "minimum_network_m": 91.98798773843063,
+          "allowed_network_m": 60.0,
+          "previous_candidate_count": 1,
+          "candidate_count": 2,
+          "nearest_candidate_m": 20.863597873594017
+        }
+      ],
+      "fallback_observations": 0,
+      "seconds": 1.2943
+    }
+  ]
+}

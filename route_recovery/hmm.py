@@ -107,7 +107,7 @@ class RoadTrip:
 
 
 def recover(trip, *, candidate_count=8, radius_m=50, sigma_m=20, beta_m=30,
-            max_gap_s=30, max_speed_mps=60, scorer=None):
+            max_gap_s=30, max_speed_mps=60, scorer=None, diagnose=False):
     """scorer(observation, candidates) returns aligned natural-log scores.
 
     Without scorer this is a distance baseline, not the required ML model.
@@ -167,7 +167,24 @@ def recover(trip, *, candidate_count=8, radius_m=50, sigma_m=20, beta_m=30,
             reason = 'unreachable_transition'
         if reason:
             flush()
-            breaks.append({'observation': t, 'reason': reason})
+            detail = {'observation': t, 'reason': reason}
+            if diagnose:
+                eligible = [a for i, a in enumerate(candidates[t - 1]) if isfinite(forward[i])]
+                targets = [b for j, b in enumerate(row) if isfinite(emissions[t][j])]
+                minimum = minimum_connection(trip, eligible, targets)
+                detail.update(cause='speed_limit' if isfinite(minimum) else 'no_directed_path',
+                              minimum_network_m=minimum if isfinite(minimum) else None,
+                              allowed_network_m=max_speed_mps * dt,
+                              previous_candidate_count=len(eligible), candidate_count=len(targets),
+                              nearest_candidate_m=min(c.distance_m for c in row))
+                if not isfinite(minimum):
+                    import networkx as nx
+                    graph = nx.Graph()
+                    graph.add_edges_from(trip.arcs)
+                    components = {node: index for index, nodes in enumerate(nx.connected_components(graph)) for node in nodes}
+                    connected = any(components.get(trip.arcs[a.arc_id][1]) == components.get(trip.arcs[b.arc_id][0]) for a in eligible for b in targets)
+                    detail['cause'] = 'road_direction' if connected else 'disconnected_components'
+            breaks.append(detail)
             start, active, matrices, forward = t, [emissions[t]], [], list(emissions[t])
         else:
             active.append(emissions[t])
@@ -190,6 +207,42 @@ def recover(trip, *, candidate_count=8, radius_m=50, sigma_m=20, beta_m=30,
             'arc_ids': [c.arc_id if c else None for c in selected],
             'independent_arc_ids': [row[max(range(len(row)), key=lambda j: emissions[t][j])].arc_id if row and any(isfinite(v) for v in emissions[t]) else None for t, row in enumerate(candidates)],
             'route_sections': geometry, 'breaks': breaks,
+            'section_observation_indices': sections,
             'gps': [[o[1], o[0]] for o in trip.track],
             'matched_observations': sum(c is not None for c in selected),
             'observation_count': len(selected)}
+
+
+def minimum_connection(trip, previous, following):
+    """Exact unconstrained minimum directed travel distance between candidate sets.
+
+    One multi-source Dijkstra with partial first/last arcs, for diagnostics only.
+    """
+    best = min(((b.fraction - a.fraction) * trip.lengths[a.arc_id]
+                for a in previous for b in following
+                if a.arc_id == b.arc_id and b.fraction >= a.fraction), default=float('inf'))
+    distances, queue = {}, []
+    for a in previous:
+        node = trip.arcs[a.arc_id][1]
+        value = (1 - a.fraction) * trip.lengths[a.arc_id]
+        if value < distances.get(node, float('inf')):
+            distances[node] = value
+            heappush(queue, (value, node))
+    endpoints = {}
+    for b in following:
+        node = trip.arcs[b.arc_id][0]
+        endpoints[node] = min(endpoints.get(node, float('inf')), b.fraction * trip.lengths[b.arc_id])
+    while queue:
+        distance, node = heappop(queue)
+        if distance != distances[node]:
+            continue
+        if distance >= best:
+            break
+        if node in endpoints:
+            best = min(best, distance + endpoints[node])
+        for neighbor, length, _ in trip.adjacency.get(node, []):
+            value = distance + length
+            if value < best and value < distances.get(neighbor, float('inf')):
+                distances[neighbor] = value
+                heappush(queue, (value, neighbor))
+    return best

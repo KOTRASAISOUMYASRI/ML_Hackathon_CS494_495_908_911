@@ -15,6 +15,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('partition')
     parser.add_argument('--output', default='reports/student_test_execution.json')
+    parser.add_argument('--diagnose', action='store_true')
     args = parser.parse_args()
     rows = []
     for files in discover_trips(args.partition):
@@ -22,7 +23,7 @@ def main():
         row = {'trip_id': files.trip_id}
         try:
             trip = SharedRoadTrip(files)
-            result = recover(trip)
+            result = recover(trip, diagnose=args.diagnose)
             count = len(trip.track)
             assert len(result['arc_ids']) == count
             assert len(result['observation_ids']) == count
@@ -32,6 +33,10 @@ def main():
                        matched=result['matched_observations'],
                        sections=len(result['route_sections']),
                        breaks=dict(Counter(b['reason'] for b in result['breaks'])))
+            if args.diagnose:
+                row['causes'] = dict(Counter(b.get('cause', b['reason']) for b in result['breaks']))
+                row['break_details'] = result['breaks']
+                row['fallback_observations'] = sum(min(c.distance_m for c in cs) > 50 for cs in trip.candidate_rows)
         except Exception as error:
             row.update(status='failed', error=f'{type(error).__name__}: {error}')
         row['seconds'] = round(perf_counter() - started, 4)
