@@ -1,5 +1,5 @@
 import numpy as np
-from pathsnap.models import (
+from models import (
     create_random_forest,
     create_hist_gradient_boosting,
 )
