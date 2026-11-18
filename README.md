@@ -51,4 +51,10 @@ against development data. Server-side evaluation owns reference access.
 In the combined inference endpoint, call the loader and feature builder
 directly if the model, HMM, and data pipeline are running in the same process.
 
-See [dataset report notes](DATASET_REPORT.md) for the method and evidence to collect.
+### Dataset exploration preview
+
+![PathSnap Folium map of student-test trip 00000000](docs/figures/student-test-folium.png)
+
+The map shows raw GPS observations in blue, the road network in gray, and the
+supplied reference route in green. The [dataset report](DATASET_REPORT.md#report-figures)
+includes the training and student-test EDA plots.
