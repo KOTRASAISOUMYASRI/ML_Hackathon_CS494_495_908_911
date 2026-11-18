@@ -1,0 +1,20 @@
+{
+    "Logistic Regression": {
+        "file": "logistic_regression.joblib",
+        "training_rows": 1103062,
+        "training_time_seconds": 1.333
+    },
+    "Decision Tree": {
+        "file": "decision_tree.joblib",
+        "training_rows": 1103062,
+        "training_time_seconds": 12.409
+    },
+    "KNN": {
+        "file": "knn.joblib",
+        "training_rows": 100000,
+        "total_available_training_rows": 1103062,
+        "sampling": "Stratified random sample",
+        "random_state": 42,
+        "training_time_seconds": 0.027
+    }
+}
