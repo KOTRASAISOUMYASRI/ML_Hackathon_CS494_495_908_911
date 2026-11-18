@@ -21,10 +21,40 @@ routes are aligned in traversal order by minimizing squared segment distances.
 These derived labels can be uncertain around parallel roads or junctions.
 Measure candidate misses before interpreting classifier performance.
 
-Run the exploration export separately for training and student-testing. Use
-the resulting counts, missingness, interval and trajectory-length summaries,
-coordinate bounds and graph statistics to write the observed EDA findings.
-Export a representative Folium view with the GPS, road and available
-development reference layers. The final team map also needs the model's
-predicted route. Only insert metrics and maps from the actual dataset and
-identify which partition produced each result.
+## Findings from Student folder.zip
+
+The source archive contains two development partitions with all four file
+types present for every trip. The trip IDs are disjoint between partitions.
+The ZIP SHA-256 is
+`4804b0399d1d56f4844b9c74e2f998aae0a281fb5947a1f47ad1bd013214d248`.
+
+| Measure | Training | Student test |
+| --- | ---: | ---: |
+| Trips | 80 | 10 |
+| Raw files | 320 | 40 |
+| GPS observations | 208,417 | 19,160 |
+| Rows removed during cleaning | 0 | 0 |
+| Steps with interval other than 1 second | 7,289 | 264 |
+| GPS gaps greater than 30 seconds | 133 | 2 |
+| Median trajectory length | 24.04 km | 20.97 km |
+| Road node records | 1,933,485 | 90,689 |
+| Directed arc records | 3,876,904 | 185,041 |
+| Weakly connected components, summed over trips | 3,121 | 227 |
+| Isolated nodes | 0 | 0 |
+| Zero-length arcs excluded from candidate search | 100 | 6 |
+| Candidate rows | 1,103,062 | 113,639 |
+| Observations missing the aligned reference candidate | 24,180 (11.60%) | 79 (0.41%) |
+
+Both partitions had zero missing or nonfinite GPS fields and zero
+non-increasing timestamp steps. The reported road counts are sums of
+trip-local records. Training trips `00000054` and `00000033` account for
+21,449 of the 24,180 training misses. Misses include effects of the inferred
+reference alignment as well as the candidate radius and cap, so this measure
+describes coverage of the derived target.
+In a systematic sample of every twentieth miss from those two trips, 1,013
+of 1,074 observations were more than 50 m from every supplied reference arc.
+
+The export generates per-trip coordinate bounds, interval summaries, and
+connectivity counts, plus EDA plots and a representative Folium map for each
+partition. Use these actual outputs for report figures. Once the model and
+decoder are integrated, add the predicted-route layer to the final team map.

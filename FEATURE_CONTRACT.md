@@ -6,6 +6,38 @@ training or student-test trip. It returns a `FeatureResult` with `candidates`
 The CLI in the repository README exports these as `candidates.csv` and
 `observations.csv`. Run each partition into a separate folder.
 
+## Using the supplied dataset
+
+- Fit and cross-validate on the archive's 80-trip `train` partition. For CV
+  within training, use `trip_id` as the group. Use the separate 10-trip
+  `student_test` partition for development evaluation and model comparison.
+- GPS cleaning, local metric projection, candidate generation, and feature
+  extraction are already done. Invalid GPS rows are dropped and unavailable
+  motion features are explicitly masked. The feature columns have no missing
+  values and need no categorical encoding. Fit scaling inside your training
+  pipeline where your model needs it.
+- Load IDs as strings and use only the listed feature columns as inputs.
+  Observation diagnostics contain reference-derived fields for evaluation.
+- The verified export has 1,103,062 training rows and 113,639 student-test
+  rows. Load the full CSV programmatically because training exceeds the
+  standard Excel worksheet row limit. No GPS observations were dropped from
+  this archive. See the [dataset report](DATASET_REPORT.md) for coverage.
+
+```python
+import pandas as pd
+from feature_engineering import FEATURE_COLUMNS, TARGET_COLUMN
+
+train = pd.read_csv("outputs/train/candidates.csv", dtype={"trip_id": str})
+student_test = pd.read_csv("outputs/student_test/candidates.csv", dtype={"trip_id": str})
+X_train = train[FEATURE_COLUMNS]
+y_train = train[TARGET_COLUMN]
+groups = train["trip_id"]
+X_test = student_test[FEATURE_COLUMNS]
+y_test = student_test[TARGET_COLUMN]
+```
+
+## Schema
+
 - One row is one cleaned GPS observation × one candidate **directed** road arc.
 - Unique row key: `trip_id`, `observation_id`, `candidate_arc_id`. IDs are strings
   for trips and zero-based original file row indices for observations and arcs.

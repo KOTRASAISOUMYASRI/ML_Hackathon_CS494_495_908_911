@@ -3,13 +3,14 @@
 
 See [the model feature contract](FEATURE_CONTRACT.md) for the training schema.
 Install the project requirements and provide one development partition at a time.
-Each trip's files must share a basename and be in the same directory.
+Extract `Student folder.zip` and pass its `train` and `student_test` folders
+separately. Each trip's files share a basename and directory.
 
 ```sh
 pip install -r requirements.txt
-python dataset_exploration.py data/training --labeled --output outputs/training
-python dataset_exploration.py data/student_testing --labeled --output outputs/student_testing
-python dataset_exploration.py data/training --labeled --serve
+python dataset_exploration.py "Student folder/train" --labeled --output outputs/train
+python dataset_exploration.py "Student folder/student_test" --labeled --output outputs/student_test
+python dataset_exploration.py "Student folder/train" --labeled --serve
 ```
 
 Open http://127.0.0.1:8001 for the development exploration page.
